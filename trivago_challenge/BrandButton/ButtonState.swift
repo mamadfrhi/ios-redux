@@ -11,8 +11,8 @@ struct ButtonState {
     var title: String
     var backgroundColor: UIColor
     var titleColor: UIColor
-    var leadingIcon: UIImage?
-    var trailingIcon: UIImage?
+    var leadingIconName: String?
+    var trailingIconName: String?
     var isEnabled: Bool
     var isHighlighted: Bool
 }

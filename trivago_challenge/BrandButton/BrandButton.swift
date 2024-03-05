@@ -26,14 +26,48 @@ class BrandButton: UIButton {
     
     @objc private func didTapButton() {
         print("The button has been tapped!")
+        
     }
     
-    func updateAppearance(state: ButtonState) {
+    override var isHighlighted: Bool {
+        didSet {
+            self.store?.dispatch(action: .setHighlighted(isHighlighted))
+        }
+    }
+    
+    private func updateAppearance(state: ButtonState) {
         setTitle(state.title, for: .normal)
         setTitleColor(state.titleColor, for: .normal)
-        backgroundColor = state.backgroundColor
-        setImage(state.leadingIcon, for: .normal)
+        set(trailingIcon: state.leadingIconName, leadingIcon: state.trailingIconName)
         isEnabled = state.isEnabled
-        alpha = state.isHighlighted ? 0.5 : 1.0
+        set(backgroundColor: state.backgroundColor, isHighlighted: state.isHighlighted)
+        
+        let inset: CGFloat = 10
+        contentEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        layer.cornerRadius = 10
+        titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        
+        sizeToFit()
+    }
+    
+    private func set(backgroundColor: UIColor, isHighlighted: Bool) {
+        let alpha = isHighlighted ? 1.0 : 0.7
+        //TODO: Clean below
+        self.backgroundColor = UIColor(ciColor: CIColor(color: backgroundColor)).withAlphaComponent(alpha)
+    }
+    
+    private func set(trailingIcon: String?, leadingIcon: String?) {
+        
+        if let leadingIcon = leadingIcon {
+            let image = UIImage(systemName: leadingIcon)
+            setImage(image, for: .normal)
+            semanticContentAttribute = .forceRightToLeft
+        }
+        
+        if let trailingIcon = trailingIcon {
+            let image = UIImage(systemName: trailingIcon)
+            setImage(image, for: .normal)
+            semanticContentAttribute = .forceLeftToRight
+        }
     }
 }
