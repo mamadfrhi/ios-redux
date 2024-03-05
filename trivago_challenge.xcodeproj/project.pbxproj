@@ -56,15 +56,39 @@
 		89D944262B974BAA00078C79 /* trivago_challenge */ = {
 			isa = PBXGroup;
 			children = (
-				89D944272B974BAA00078C79 /* AppDelegate.swift */,
-				89D944292B974BAA00078C79 /* SceneDelegate.swift */,
-				89D9442B2B974BAA00078C79 /* ViewController.swift */,
-				89D9442D2B974BAA00078C79 /* Main.storyboard */,
-				89D944302B974BAB00078C79 /* Assets.xcassets */,
-				89D944322B974BAB00078C79 /* LaunchScreen.storyboard */,
-				89D944352B974BAB00078C79 /* Info.plist */,
+				89D9443B2B974C3B00078C79 /* Delegates */,
+				89D9443D2B974DF500078C79 /* Screens */,
+				89D9443C2B974D9400078C79 /* Resources */,
 			);
 			path = trivago_challenge;
+			sourceTree = "<group>";
+		};
+		89D9443B2B974C3B00078C79 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				89D944272B974BAA00078C79 /* AppDelegate.swift */,
+				89D944292B974BAA00078C79 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		89D9443C2B974D9400078C79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89D944302B974BAB00078C79 /* Assets.xcassets */,
+				89D944352B974BAB00078C79 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		89D9443D2B974DF500078C79 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				89D9442B2B974BAA00078C79 /* ViewController.swift */,
+				89D9442D2B974BAA00078C79 /* Main.storyboard */,
+				89D944322B974BAB00078C79 /* LaunchScreen.storyboard */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,7 +313,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD444593MH;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = trivago_challenge/Info.plist;
+				INFOPLIST_FILE = trivago_challenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +341,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD444593MH;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = trivago_challenge/Info.plist;
+				INFOPLIST_FILE = trivago_challenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
