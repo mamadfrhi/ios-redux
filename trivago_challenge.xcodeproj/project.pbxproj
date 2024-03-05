@@ -13,6 +13,11 @@
 		89D9442F2B974BAA00078C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D9442D2B974BAA00078C79 /* Main.storyboard */; };
 		89D944312B974BAB00078C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D944302B974BAB00078C79 /* Assets.xcassets */; };
 		89D944342B974BAB00078C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D944322B974BAB00078C79 /* LaunchScreen.storyboard */; };
+		89D9443F2B974E8700078C79 /* ButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9443E2B974E8700078C79 /* ButtonState.swift */; };
+		89D944422B974EC700078C79 /* ButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944412B974EC700078C79 /* ButtonAction.swift */; };
+		89D944442B974EDF00078C79 /* ButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944432B974EDF00078C79 /* ButtonReducer.swift */; };
+		89D944462B974F1200078C79 /* ButtonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944452B974F1200078C79 /* ButtonStore.swift */; };
+		89D944482B974F4600078C79 /* BrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944472B974F4600078C79 /* BrandButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		89D944302B974BAB00078C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D944332B974BAB00078C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D944352B974BAB00078C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D9443E2B974E8700078C79 /* ButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonState.swift; sourceTree = "<group>"; };
+		89D944412B974EC700078C79 /* ButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAction.swift; sourceTree = "<group>"; };
+		89D944432B974EDF00078C79 /* ButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReducer.swift; sourceTree = "<group>"; };
+		89D944452B974F1200078C79 /* ButtonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStore.swift; sourceTree = "<group>"; };
+		89D944472B974F4600078C79 /* BrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		89D944262B974BAA00078C79 /* trivago_challenge */ = {
 			isa = PBXGroup;
 			children = (
+				89D944402B974E9C00078C79 /* BrandButton */,
 				89D9443B2B974C3B00078C79 /* Delegates */,
 				89D9443D2B974DF500078C79 /* Screens */,
 				89D9443C2B974D9400078C79 /* Resources */,
@@ -89,6 +100,18 @@
 				89D944322B974BAB00078C79 /* LaunchScreen.storyboard */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		89D944402B974E9C00078C79 /* BrandButton */ = {
+			isa = PBXGroup;
+			children = (
+				89D9443E2B974E8700078C79 /* ButtonState.swift */,
+				89D944412B974EC700078C79 /* ButtonAction.swift */,
+				89D944432B974EDF00078C79 /* ButtonReducer.swift */,
+				89D944452B974F1200078C79 /* ButtonStore.swift */,
+				89D944472B974F4600078C79 /* BrandButton.swift */,
+			);
+			path = BrandButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D944442B974EDF00078C79 /* ButtonReducer.swift in Sources */,
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
+				89D9443F2B974E8700078C79 /* ButtonState.swift in Sources */,
 				89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */,
+				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,
 				89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */,
+				89D944422B974EC700078C79 /* ButtonAction.swift in Sources */,
+				89D944482B974F4600078C79 /* BrandButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
