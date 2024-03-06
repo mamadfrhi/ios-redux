@@ -13,11 +13,13 @@ class ButtonStore {
         }
     }
     private let reducer: ButtonReducer
+    let styleCalculator: BrandButtonStyleCalculable
     var stateDidUpdate: () -> Void = {}
     
-    init(initialState: ButtonState, reducer: @escaping ButtonReducer) {
+    init(initialState: ButtonState, reducer: @escaping ButtonReducer, styleCalculator: BrandButtonStyleCalculable) {
         self.state = initialState
         self.reducer = reducer
+        self.styleCalculator = styleCalculator
     }
     
     func dispatch(action: ButtonAction) {

@@ -20,6 +20,8 @@
 		89D944482B974F4600078C79 /* BrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944472B974F4600078C79 /* BrandButton.swift */; };
 		89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9444B2B97921700078C79 /* BrandPrimaryButtonColors.swift */; };
 		89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */; };
+		89D944532B98493300078C79 /* BrandButtonStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */; };
+		89D944552B98495000078C79 /* ButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944542B98495000078C79 /* ButtonStyleCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		89D944472B974F4600078C79 /* BrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButton.swift; sourceTree = "<group>"; };
 		89D9444B2B97921700078C79 /* BrandPrimaryButtonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPrimaryButtonColors.swift; sourceTree = "<group>"; };
 		89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSecondaryButtonColors.swift; sourceTree = "<group>"; };
+		89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonStyleCalculable.swift; sourceTree = "<group>"; };
+		89D944542B98495000078C79 /* ButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				89D944452B974F1200078C79 /* ButtonStore.swift */,
 				89D944472B974F4600078C79 /* BrandButton.swift */,
 				89D9444F2B9797ED00078C79 /* BrandButtonColors */,
+				89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */,
+				89D944542B98495000078C79 /* ButtonStyleCalculator.swift */,
 			);
 			path = BrandButton;
 			sourceTree = "<group>";
@@ -206,7 +212,9 @@
 				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,
 				89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */,
 				89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */,
+				89D944532B98493300078C79 /* BrandButtonStyleCalculable.swift in Sources */,
 				89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */,
+				89D944552B98495000078C79 /* ButtonStyleCalculator.swift in Sources */,
 				89D944422B974EC700078C79 /* ButtonAction.swift in Sources */,
 				89D944482B974F4600078C79 /* BrandButton.swift in Sources */,
 			);
