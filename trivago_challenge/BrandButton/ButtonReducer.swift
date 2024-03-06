@@ -6,4 +6,4 @@
 //
 
 
-typealias ButtonReducer = (ButtonState, ButtonAction) -> ButtonState
+typealias ButtonReducer = (ButtonState, ButtonAction, BrandButtonStyleCalculable) -> ButtonState
