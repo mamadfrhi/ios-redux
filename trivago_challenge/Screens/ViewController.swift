@@ -34,9 +34,7 @@ class ViewController: UIViewController {
             switch action {
             case .setBackgroundColor:
                 break
-            case .setEnabled(let isEnabled):
-                newState.isEnabled = isEnabled
-                newState.backgroundColor = .gray
+                
                 
             case .setHighlight(let backColor, let titleColor, let titleHighlight):
                 newState.backgroundColor = backColor
@@ -69,6 +67,10 @@ class ViewController: UIViewController {
                     newState.trailingIconName = iconName
                 }
                 newState.iconColor = iconColor
+            case .setDisableStyle:
+                newState.isEnabled = false
+            case .setEnableStyle:
+                newState.isEnabled = true
             }
             return newState
         }
@@ -77,7 +79,7 @@ class ViewController: UIViewController {
         brandButton = BrandButton(store: buttonStore)
         brandButton.store?.dispatch(action: .setOrder(.Secoundary, styleCalculator))
         brandButton.store?.dispatch(action: .setIcon("square.fill", .left, iconColor: .black))
-        brandButton.store?.dispatch(action: .setEnabled(false))
+        brandButton.store?.dispatch(action: .setEnableStyle)
         
         view.addSubview(brandButton)
         

@@ -23,6 +23,7 @@
 		89D944532B98493300078C79 /* BrandButtonStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */; };
 		89D944552B98495000078C79 /* ButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944542B98495000078C79 /* ButtonStyleCalculator.swift */; };
 		89D944572B9857E100078C79 /* BrandButtonDisableStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944562B9857E000078C79 /* BrandButtonDisableStyleCalculable.swift */; };
+		89D944592B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944582B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonStyleCalculable.swift; sourceTree = "<group>"; };
 		89D944542B98495000078C79 /* ButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleCalculator.swift; sourceTree = "<group>"; };
 		89D944562B9857E000078C79 /* BrandButtonDisableStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonDisableStyleCalculable.swift; sourceTree = "<group>"; };
+		89D944582B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonDisableStyleCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */,
 				89D944542B98495000078C79 /* ButtonStyleCalculator.swift */,
 				89D944562B9857E000078C79 /* BrandButtonDisableStyleCalculable.swift */,
+				89D944582B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift */,
 			);
 			path = BrandButton;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */,
 				89D944552B98495000078C79 /* ButtonStyleCalculator.swift in Sources */,
 				89D944422B974EC700078C79 /* ButtonAction.swift in Sources */,
+				89D944592B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift in Sources */,
 				89D944482B974F4600078C79 /* BrandButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

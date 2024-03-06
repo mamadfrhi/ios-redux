@@ -31,8 +31,9 @@ class BrandButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            let styleCalculator = ButtonStyleCalculator()
+            
             guard let state = store?.state else { return }
+            let styleCalculator = ButtonStyleCalculator()
             let backColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
                                                                buttonOrder: state.buttonOrder,
                                                                isHighlighted: isHighlighted)
@@ -50,13 +51,21 @@ class BrandButton: UIButton {
     
     private func updateAppearance(state: ButtonState) {
         setTitle(state.title, for: .normal)
-        setTitleColor(state.isHighlighted ? state.titleHighlightColor : state.titleColor, for: .normal)
-        isEnabled = state.isEnabled
-        backgroundColor = state.backgroundColor
         
-        set(leadingIcon: state.leadingIconName, trailingIcon: state.trailingIconName, iconColor: state.iconColor)
+        var state = state
+        if state.isEnabled {
+            state = setEnableStyle(state: store!.state)
+        } else {
+            state = setDisableStyle(state: store!.state)
+        }
+        
+        setTitleColor(state.titleColor, for: .normal)
+        backgroundColor = state.backgroundColor
         layer.borderWidth = state.buttonOrder == .Secoundary ? 1 : 0
         layer.borderColor = state.borderColor?.cgColor
+        
+        
+        set(leadingIcon: state.leadingIconName, trailingIcon: state.trailingIconName, iconColor: state.iconColor)
         
         let inset: CGFloat = 10
         contentEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
@@ -64,6 +73,29 @@ class BrandButton: UIButton {
         titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         
         sizeToFit()
+    }
+    
+    private func setDisableStyle(state: ButtonState) -> ButtonState {
+        var state = state
+        self.disableStyleCalculator = BrandButtonDisableStyleCalculator()
+        state.backgroundColor = disableStyleCalculator?.calculateDisableBackgroundColor(buttonType: state.buttonType,
+                                                                                       buttonOrder: state.buttonOrder)
+        state.borderColor = disableStyleCalculator?.calculateDisableBorderColor(buttonType: state.buttonType,
+                                                                                       buttonOrder: state.buttonOrder)
+        state.titleColor = disableStyleCalculator!.calculateDisableTitleColor(buttonType: state.buttonType,
+                                                                                          buttonOrder: state.buttonOrder)
+        self.isEnabled = false
+        return state
+    }
+    
+    private func setEnableStyle(state: ButtonState) -> ButtonState {
+        var state = state
+        self.disableStyleCalculator = BrandButtonDisableStyleCalculator()
+        state.backgroundColor = .red
+        state.borderColor = .blue
+        state.titleColor = .white
+        self.isEnabled = true
+        return state
     }
     
     private func set(leadingIcon: String?, trailingIcon: String?, iconColor: UIColor?) {
