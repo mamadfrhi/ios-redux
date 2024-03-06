@@ -67,9 +67,22 @@ class ViewController: UIViewController {
                     newState.trailingIconName = iconName
                 }
                 newState.iconColor = iconColor
-            case .setDisableStyle:
+                
+            case .setDisableStyle(let disableCalculator):
+                newState.backgroundColor = disableCalculator.calculateDisableBackgroundColor(buttonType: newState.buttonType,
+                                                                                             buttonOrder: newState.buttonOrder)
+                newState.titleColor = disableCalculator.calculateDisableTitleColor(buttonType: newState.buttonType,
+                                                                                        buttonOrder: newState.buttonOrder)
+                newState.borderColor = disableCalculator.calculateDisableBorderColor(buttonType: newState.buttonType,
+                                                                                         buttonOrder: newState.buttonOrder)
                 newState.isEnabled = false
-            case .setEnableStyle:
+            case .setEnableStyle(let enableCalculator):
+                newState.backgroundColor = enableCalculator.calculateEnableBackgroundColor(buttonType: newState.buttonType,
+                                                                                             buttonOrder: newState.buttonOrder)
+                newState.titleColor = enableCalculator.calculateEnableTitleColor(buttonType: newState.buttonType,
+                                                                                        buttonOrder: newState.buttonOrder)
+                newState.borderColor = enableCalculator.calculateEnableBorderColor(buttonType: newState.buttonType,
+                                                                                         buttonOrder: newState.buttonOrder)
                 newState.isEnabled = true
             }
             return newState
@@ -79,7 +92,10 @@ class ViewController: UIViewController {
         brandButton = BrandButton(store: buttonStore)
         brandButton.store?.dispatch(action: .setOrder(.Secoundary, styleCalculator))
         brandButton.store?.dispatch(action: .setIcon("square.fill", .left, iconColor: .black))
-        brandButton.store?.dispatch(action: .setEnableStyle)
+        let disableCalculator = BrandButtonDisableStyleCalculator()
+        brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
+        let enableCalculator = BrandButtonEnableStyleCalculator()
+        brandButton.store?.dispatch(action: .setEnableStyle(enableCalculator))
         
         view.addSubview(brandButton)
         
