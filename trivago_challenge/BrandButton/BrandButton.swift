@@ -31,7 +31,20 @@ class BrandButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            store?.dispatch(action: .setHighlighted(isHighlighted))
+            let styleCalculator = ButtonStyleCalculator()
+            guard let state = store?.state else { return }
+            let backColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
+                                                               buttonOrder: state.buttonOrder,
+                                                               isHighlighted: isHighlighted)
+            let titleColor = styleCalculator.calculateTitleColor(buttonType: state.buttonType,
+                                                                 buttonOrder: state.buttonOrder,
+                                                                 isHighlighted: isHighlighted)
+            let titleHighlightColor = styleCalculator.calculateTitleHighlightColor(buttonType: state.buttonType,
+                                                                                   buttonOrder: state.buttonOrder,
+                                                                                   isHighlighted: isHighlighted)
+            store?.dispatch(action: .setHighlight(backgroundColor: backColor,
+                                                  titleColor: titleColor,
+                                                  titleHighlightColor: titleHighlightColor))
         }
     }
     

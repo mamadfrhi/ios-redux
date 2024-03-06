@@ -25,48 +25,41 @@ class ViewController: UIViewController {
             isEnabled: true,
             isHighlighted: false,
             buttonOrder: .Secoundary,
-            buttonType: .successButton
+            buttonType: .actionButton
         )
         
-        let reducer: ButtonReducer = { state, action, styleCalculator in
+        let reducer: ButtonReducer = { state, action in
             var newState = state
             
             switch action {
             case .setBackgroundColor:
-                newState.backgroundColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
-                                                                                               buttonOrder: state.buttonOrder,
-                                                                                               isHighlighted: false)
+                break
             case .setEnabled(let isEnabled):
                 newState.isEnabled = isEnabled
+                newState.backgroundColor = .gray
                 
-            case .setHighlighted(let isHighlighted):
-                newState.backgroundColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
-                                                                                               buttonOrder: state.buttonOrder,
-                                                                                               isHighlighted: isHighlighted)
-                newState.titleHighlightColor = styleCalculator.calculateTitleHighlightColor(buttonType: state.buttonType,
-                                                                                                             buttonOrder: state.buttonOrder,
-                                                                                                             isHighlighted: isHighlighted)
-                newState.titleColor = styleCalculator.calculateTitleColor(buttonType: state.buttonType,
-                                                                                           buttonOrder: state.buttonOrder,
-                                                                                           isHighlighted: isHighlighted)
+            case .setHighlight(let backColor, let titleColor, let titleHighlight):
+                newState.backgroundColor = backColor
+                newState.titleColor = titleColor
+                newState.titleHighlightColor = titleHighlight
                 
                 
             case .setTitle(let title):
                 newState.title = title
                 
-            case .setOrder(let buttonOrder):
+            case .setOrder(let buttonOrder, let styleCalculator):
                 newState.buttonOrder = buttonOrder
                 newState.backgroundColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
-                                                                                               buttonOrder: buttonOrder,
-                                                                                               isHighlighted: false)
+                                                                              buttonOrder: buttonOrder,
+                                                                              isHighlighted: false)
                 newState.titleColor = styleCalculator.calculateTitleColor(buttonType: state.buttonType,
-                                                                                           buttonOrder: buttonOrder,
-                                                                                           isHighlighted: false)
+                                                                          buttonOrder: buttonOrder,
+                                                                          isHighlighted: false)
                 newState.titleHighlightColor = styleCalculator.calculateTitleHighlightColor(buttonType: state.buttonType,
-                                                                                                             buttonOrder: buttonOrder,
-                                                                                                             isHighlighted: false)
+                                                                                            buttonOrder: buttonOrder,
+                                                                                            isHighlighted: false)
                 newState.borderColor = styleCalculator.calculateBorderColor(buttonType: newState.buttonType,
-                                                                                             buttonOrder: buttonOrder)
+                                                                            buttonOrder: buttonOrder)
                 
             case .setIcon(let iconName, let iconPosition, let iconColor):
                 if iconName == nil { break }
@@ -80,11 +73,11 @@ class ViewController: UIViewController {
             return newState
         }
         let styleCalculator = ButtonStyleCalculator()
-        buttonStore = ButtonStore(initialState: initialState, reducer: reducer, styleCalculator: styleCalculator)
+        buttonStore = ButtonStore(initialState: initialState, reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
-        brandButton.store?.dispatch(action: .setBackgroundColor)
-        brandButton.store?.dispatch(action: .setOrder(.Primary))
+        brandButton.store?.dispatch(action: .setOrder(.Secoundary, styleCalculator))
         brandButton.store?.dispatch(action: .setIcon("square.fill", .left, iconColor: .black))
+        brandButton.store?.dispatch(action: .setEnabled(false))
         
         view.addSubview(brandButton)
         

@@ -22,6 +22,7 @@
 		89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */; };
 		89D944532B98493300078C79 /* BrandButtonStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */; };
 		89D944552B98495000078C79 /* ButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944542B98495000078C79 /* ButtonStyleCalculator.swift */; };
+		89D944572B9857E100078C79 /* BrandButtonDisableStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944562B9857E000078C79 /* BrandButtonDisableStyleCalculable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSecondaryButtonColors.swift; sourceTree = "<group>"; };
 		89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonStyleCalculable.swift; sourceTree = "<group>"; };
 		89D944542B98495000078C79 /* ButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleCalculator.swift; sourceTree = "<group>"; };
+		89D944562B9857E000078C79 /* BrandButtonDisableStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonDisableStyleCalculable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				89D9444F2B9797ED00078C79 /* BrandButtonColors */,
 				89D944522B98493200078C79 /* BrandButtonStyleCalculable.swift */,
 				89D944542B98495000078C79 /* ButtonStyleCalculator.swift */,
+				89D944562B9857E000078C79 /* BrandButtonDisableStyleCalculable.swift */,
 			);
 			path = BrandButton;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,
 				89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */,
 				89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */,
+				89D944572B9857E100078C79 /* BrandButtonDisableStyleCalculable.swift in Sources */,
 				89D944532B98493300078C79 /* BrandButtonStyleCalculable.swift in Sources */,
 				89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */,
 				89D944552B98495000078C79 /* ButtonStyleCalculator.swift in Sources */,
