@@ -53,8 +53,11 @@ class BrandButton: UIButton {
         setTitle(state.title, for: .normal)
         layer.cornerRadius = 5
         self.isEnabled = state.isEnabled
-        setTitleColor(state.titleColor, for: .normal)
-        backgroundColor = state.backgroundColor
+        
+        UIView.animate(withDuration: 1) {
+            self.setTitleColor(state.titleColor, for: .normal)
+            self.backgroundColor = state.backgroundColor
+        }
         
         
         setBorderColor(with: state)

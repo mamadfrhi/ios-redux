@@ -108,7 +108,7 @@ class ViewController: UIViewController {
         brandButton.store?.dispatch(action: .setEnableStyle(enableCalculator))
         
         //        brandButton.store?.dispatch(action: .setOrder(.Primary, styleCalculator))
-        brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
+//        brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
         
         view.addSubview(brandButton)
         
