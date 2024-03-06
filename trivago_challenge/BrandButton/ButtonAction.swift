@@ -14,7 +14,7 @@ enum ButtonAction {
     case setHighlight(backgroundColor: UIColor?, titleColor: UIColor, titleHighlightColor: UIColor?)
     case setTitle(String)
     case setOrder(BrandButtonOrder, BrandButtonStyleCalculable)
-    case setIcon(String?, BrandButtonIconPosition, iconColor: UIColor)
+    case setIcon(iconName: String?, iconPosition: BrandButtonIconPosition, brandButtonCalculator: BrandButtonIconCalculable)
 }
 
 

@@ -51,52 +51,54 @@ class BrandButton: UIButton {
     
     private func updateAppearance(state: ButtonState) {
         setTitle(state.title, for: .normal)
-        
+        layer.cornerRadius = 5
         self.isEnabled = state.isEnabled
-        
         setTitleColor(state.titleColor, for: .normal)
         backgroundColor = state.backgroundColor
-        layer.borderWidth = state.buttonOrder == .Secoundary ? 1 : 0
-        layer.borderColor = state.borderColor?.cgColor
         
         
-        set(leadingIcon: state.leadingIconName, trailingIcon: state.trailingIconName, iconColor: state.iconColor)
-        
-        let inset: CGFloat = 10
-        contentEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-        layer.cornerRadius = 10
-        titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        setBorderColor(with: state)
+        set(leadingIcon: state.leadingIcon,
+            trailingIcon: state.trailingIcon)
+        set(insetValue: 10)
+        set(font: UIFont.systemFont(ofSize: 17, weight: .medium))
         
         sizeToFit()
     }
     
-    private func set(leadingIcon: String?, trailingIcon: String?, iconColor: UIColor?) {
+    private func setBorderColor(with state: ButtonState) {
+        layer.borderWidth = state.buttonOrder == .Secoundary ? 1 : 0
+        layer.borderColor = state.borderColor?.cgColor
+    }
+    
+    private func set(insetValue: CGFloat) {
+        contentEdgeInsets = UIEdgeInsets(top: insetValue, left: insetValue, bottom: insetValue, right: insetValue)
+    }
+    
+    private func set(font: UIFont) {
+        titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+    }
+    
+    private func set(leadingIcon: UIImage?, trailingIcon: UIImage?) {
         
-        guard let iconColor = iconColor else { return }
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular, scale: .medium)
+        var iconImage: UIImage?
         
         if let leadingIcon = leadingIcon {
-            guard let image = UIImage(systemName: leadingIcon, withConfiguration: largeConfig)?
-                .withRenderingMode(.alwaysOriginal)
-                .withTintColor(iconColor) else { return }
-            
-            setImage(image, for: .normal)
-            imageView!.contentMode = .center
+            iconImage = leadingIcon
             semanticContentAttribute = .forceLeftToRight
             imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
             titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
             
         } else if let trailingIcon = trailingIcon {
-            
-            guard let image = UIImage(systemName: trailingIcon, withConfiguration: largeConfig)?
-                .withRenderingMode(.alwaysOriginal)
-                .withTintColor(iconColor) else { return }
-            
-            setImage(image, for: .normal)
+            iconImage = trailingIcon
             semanticContentAttribute = .forceRightToLeft
-            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         }
+        
+        setImage(iconImage, for: .normal)
+        imageView!.contentMode = .center
+        
         
         self.contentHorizontalAlignment = .center
         self.contentVerticalAlignment = .center
@@ -104,7 +106,5 @@ class BrandButton: UIButton {
         titleLabel?.lineBreakMode = .byTruncatingTail
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.1
-        
-        sizeToFit()
     }
 }

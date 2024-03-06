@@ -20,12 +20,12 @@ class ViewController: UIViewController {
             title: "Init State",
             backgroundColor: UIColor.red,
             titleColor: UIColor.white,
-            leadingIconName: nil,
-            trailingIconName: nil,
+            leadingIcon: nil,
+            trailingIcon: nil,
             isEnabled: true,
             isHighlighted: false,
             buttonOrder: .Secoundary,
-            buttonType: .actionButton
+            buttonType: .successButton
         )
         
         let reducer: ButtonReducer = { state, action in
@@ -59,31 +59,35 @@ class ViewController: UIViewController {
                 newState.borderColor = styleCalculator.calculateBorderColor(buttonType: newState.buttonType,
                                                                             buttonOrder: buttonOrder)
                 
-            case .setIcon(let iconName, let iconPosition, let iconColor):
-                if iconName == nil { break }
-                if iconPosition == .left {
-                    newState.leadingIconName = iconName
-                } else {
-                    newState.trailingIconName = iconName
-                }
-                newState.iconColor = iconColor
+                
+                
                 
             case .setDisableStyle(let disableCalculator):
                 newState.backgroundColor = disableCalculator.calculateDisableBackgroundColor(buttonType: newState.buttonType,
                                                                                              buttonOrder: newState.buttonOrder)
                 newState.titleColor = disableCalculator.calculateDisableTitleColor(buttonType: newState.buttonType,
-                                                                                        buttonOrder: newState.buttonOrder)
+                                                                                   buttonOrder: newState.buttonOrder)
                 newState.borderColor = disableCalculator.calculateDisableBorderColor(buttonType: newState.buttonType,
-                                                                                         buttonOrder: newState.buttonOrder)
+                                                                                     buttonOrder: newState.buttonOrder)
                 newState.isEnabled = false
             case .setEnableStyle(let enableCalculator):
                 newState.backgroundColor = enableCalculator.calculateEnableBackgroundColor(buttonType: newState.buttonType,
-                                                                                             buttonOrder: newState.buttonOrder)
+                                                                                           buttonOrder: newState.buttonOrder)
                 newState.titleColor = enableCalculator.calculateEnableTitleColor(buttonType: newState.buttonType,
-                                                                                        buttonOrder: newState.buttonOrder)
+                                                                                 buttonOrder: newState.buttonOrder)
                 newState.borderColor = enableCalculator.calculateEnableBorderColor(buttonType: newState.buttonType,
-                                                                                         buttonOrder: newState.buttonOrder)
+                                                                                   buttonOrder: newState.buttonOrder)
                 newState.isEnabled = true
+                
+            case .setIcon(iconName: let iconName, iconPosition: let iconPosition, let iconCalculator):
+                if iconName == nil { break }
+                if iconPosition == .left {
+                    newState.leadingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
+                                                                                       buttonOrder: newState.buttonOrder)
+                } else {
+                    newState.trailingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
+                                                                                        buttonOrder: newState.buttonOrder)
+                }
             }
             return newState
         }
@@ -91,11 +95,20 @@ class ViewController: UIViewController {
         buttonStore = ButtonStore(initialState: initialState, reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
         brandButton.store?.dispatch(action: .setOrder(.Secoundary, styleCalculator))
-        brandButton.store?.dispatch(action: .setIcon("square.fill", .left, iconColor: .black))
+        
+        let iconCalculator = BrandButtonIconCalculater()
+        brandButton.store?.dispatch(action: .setIcon(iconName: "square.fill",
+                                                     iconPosition: .right,
+                                                     brandButtonCalculator: iconCalculator))
+        
         let disableCalculator = BrandButtonDisableStyleCalculator()
         brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
+        
         let enableCalculator = BrandButtonEnableStyleCalculator()
         brandButton.store?.dispatch(action: .setEnableStyle(enableCalculator))
+        
+        //        brandButton.store?.dispatch(action: .setOrder(.Primary, styleCalculator))
+        brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
         
         view.addSubview(brandButton)
         

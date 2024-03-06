@@ -26,6 +26,8 @@
 		89D944592B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944582B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift */; };
 		89D9445B2B986AE300078C79 /* BrandButtonEnableStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445A2B986AE300078C79 /* BrandButtonEnableStyleCalculator.swift */; };
 		89D9445D2B986C5E00078C79 /* BrandButtonEnableStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445C2B986C5E00078C79 /* BrandButtonEnableStyleCalculable.swift */; };
+		89D9445F2B98749C00078C79 /* BrandButtonIconCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445E2B98749C00078C79 /* BrandButtonIconCalculable.swift */; };
+		89D944612B9874E400078C79 /* BrandButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944602B9874E400078C79 /* BrandButtonIconCalculater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		89D944582B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonDisableStyleCalculator.swift; sourceTree = "<group>"; };
 		89D9445A2B986AE300078C79 /* BrandButtonEnableStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonEnableStyleCalculator.swift; sourceTree = "<group>"; };
 		89D9445C2B986C5E00078C79 /* BrandButtonEnableStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonEnableStyleCalculable.swift; sourceTree = "<group>"; };
+		89D9445E2B98749C00078C79 /* BrandButtonIconCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconCalculable.swift; sourceTree = "<group>"; };
+		89D944602B9874E400078C79 /* BrandButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconCalculater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				89D944582B98585E00078C79 /* BrandButtonDisableStyleCalculator.swift */,
 				89D9445C2B986C5E00078C79 /* BrandButtonEnableStyleCalculable.swift */,
 				89D9445A2B986AE300078C79 /* BrandButtonEnableStyleCalculator.swift */,
+				89D9445E2B98749C00078C79 /* BrandButtonIconCalculable.swift */,
+				89D944602B9874E400078C79 /* BrandButtonIconCalculater.swift */,
 			);
 			path = BrandButton;
 			sourceTree = "<group>";
@@ -217,11 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D9445F2B98749C00078C79 /* BrandButtonIconCalculable.swift in Sources */,
 				89D944442B974EDF00078C79 /* ButtonReducer.swift in Sources */,
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
 				89D9443F2B974E8700078C79 /* ButtonState.swift in Sources */,
 				89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */,
 				89D9445D2B986C5E00078C79 /* BrandButtonEnableStyleCalculable.swift in Sources */,
+				89D944612B9874E400078C79 /* BrandButtonIconCalculater.swift in Sources */,
 				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,
 				89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */,
 				89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */,
