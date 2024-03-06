@@ -31,16 +31,19 @@ class BrandButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            self.store?.dispatch(action: .setHighlighted(isHighlighted))
+            store?.dispatch(action: .setHighlighted(isHighlighted))
         }
     }
     
     private func updateAppearance(state: ButtonState) {
         setTitle(state.title, for: .normal)
-        setTitleColor(state.titleColor, for: .normal)
-        set(trailingIcon: state.leadingIconName, leadingIcon: state.trailingIconName)
+        setTitleColor(state.isHighlighted ? state.titleHighlightColor : state.titleColor, for: .normal)
         isEnabled = state.isEnabled
-        set(backgroundColor: state.backgroundColor, isHighlighted: state.isHighlighted)
+        backgroundColor = state.backgroundColor
+        
+        set(leadingIcon: state.leadingIconName, trailingIcon: state.trailingIconName, iconColor: state.iconColor)
+        layer.borderWidth = state.buttonOrder == .Secoundary ? 1 : 0
+        layer.borderColor = state.borderColor?.cgColor
         
         let inset: CGFloat = 10
         contentEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
@@ -50,24 +53,41 @@ class BrandButton: UIButton {
         sizeToFit()
     }
     
-    private func set(backgroundColor: UIColor, isHighlighted: Bool) {
-        let alpha = isHighlighted ? 1.0 : 0.7
-        //TODO: Clean below
-        self.backgroundColor = UIColor(ciColor: CIColor(color: backgroundColor)).withAlphaComponent(alpha)
-    }
-    
-    private func set(trailingIcon: String?, leadingIcon: String?) {
+    private func set(leadingIcon: String?, trailingIcon: String?, iconColor: UIColor?) {
+        
+        guard let iconColor = iconColor else { return }
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular, scale: .medium)
         
         if let leadingIcon = leadingIcon {
-            let image = UIImage(systemName: leadingIcon)
+            guard let image = UIImage(systemName: leadingIcon, withConfiguration: largeConfig)?
+                .withRenderingMode(.alwaysOriginal)
+                .withTintColor(iconColor) else { return }
+            
+            setImage(image, for: .normal)
+            imageView!.contentMode = .center
+            semanticContentAttribute = .forceLeftToRight
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            
+        } else if let trailingIcon = trailingIcon {
+            
+            guard let image = UIImage(systemName: trailingIcon, withConfiguration: largeConfig)?
+                .withRenderingMode(.alwaysOriginal)
+                .withTintColor(iconColor) else { return }
+            
             setImage(image, for: .normal)
             semanticContentAttribute = .forceRightToLeft
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         }
         
-        if let trailingIcon = trailingIcon {
-            let image = UIImage(systemName: trailingIcon)
-            setImage(image, for: .normal)
-            semanticContentAttribute = .forceLeftToRight
-        }
+        self.contentHorizontalAlignment = .center
+        self.contentVerticalAlignment = .center
+        
+        titleLabel?.lineBreakMode = .byTruncatingTail
+        titleLabel?.adjustsFontSizeToFitWidth = true
+        titleLabel?.minimumScaleFactor = 0.1
+        
+        sizeToFit()
     }
 }
