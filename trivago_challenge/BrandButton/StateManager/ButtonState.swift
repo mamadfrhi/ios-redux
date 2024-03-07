@@ -8,18 +8,18 @@
 import UIKit
 
 protocol ButtonStateable {
-    var title: String { get set }
-    var backgroundColor: UIColor? { get set }
-    var borderColor: UIColor? { get set }
-    var titleHighlightColor: UIColor? { get set }
-    var titleColor: UIColor { get set }
-    var leadingIcon: UIImage? { get set }
-    var trailingIcon: UIImage? { get set }
-    var iconColor: UIColor? { get set }
-    var isEnabled: Bool { get set }
-    var isHighlighted: Bool { get set }
+    var title: String { get }
+    var backgroundColor: UIColor? { get }
+    var borderColor: UIColor? { get }
+    var titleHighlightColor: UIColor? { get }
+    var titleColor: UIColor { get }
+    var leadingIcon: UIImage? { get }
+    var trailingIcon: UIImage? { get }
+    var iconColor: UIColor? { get }
+    var isEnabled: Bool { get }
+    var isHighlighted: Bool { get }
     var buttonOrder: BrandButtonOrder { get }
-    var buttonType: BrandButtonType { get set }
+    var buttonType: BrandButtonType { get }
     
     func render(isHighlighted: Bool, isEnabled: Bool) -> ButtonStateable
 }
