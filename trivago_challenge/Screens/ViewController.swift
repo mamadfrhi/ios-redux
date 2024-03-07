@@ -19,9 +19,6 @@ class ViewController: UIViewController {
             var newState = state
             
             switch action {
-            case .setBackgroundColor:
-                break
-                
                 
             case .setHighlight(let isHighlighted):
                 

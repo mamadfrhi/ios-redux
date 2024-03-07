@@ -8,7 +8,6 @@
 import UIKit
 
 enum ButtonAction {
-    case setBackgroundColor
     case setDisableStyle(buttonOrder: BrandButtonOrder)
     case setHighlight(isHighlighted: Bool)
     case setTitle(String)
