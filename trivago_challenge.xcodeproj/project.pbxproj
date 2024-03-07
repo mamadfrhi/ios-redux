@@ -29,6 +29,8 @@
 		89D944632B98B7AE00078C79 /* PrimaryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944622B98B7AE00078C79 /* PrimaryState.swift */; };
 		89D944652B98B7C600078C79 /* SecondaryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944642B98B7C600078C79 /* SecondaryState.swift */; };
 		89D9446F2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */; };
+		89D944732B99E68900078C79 /* BrandButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944722B99E68900078C79 /* BrandButtonIcon.swift */; };
+		89D944752B99E71900078C79 /* BrandButtonIconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944742B99E71900078C79 /* BrandButtonIconProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		89D944622B98B7AE00078C79 /* PrimaryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryState.swift; sourceTree = "<group>"; };
 		89D944642B98B7C600078C79 /* SecondaryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryState.swift; sourceTree = "<group>"; };
 		89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyleCalculator.swift; sourceTree = "<group>"; };
+		89D944722B99E68900078C79 /* BrandButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIcon.swift; sourceTree = "<group>"; };
+		89D944742B99E71900078C79 /* BrandButtonIconProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			children = (
 				89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */,
 				89D944602B9874E400078C79 /* ButtonIconCalculater.swift */,
+				89D944722B99E68900078C79 /* BrandButtonIcon.swift */,
+				89D944742B99E71900078C79 /* BrandButtonIconProtocol.swift */,
 			);
 			path = IconCalculator;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D944732B99E68900078C79 /* BrandButtonIcon.swift in Sources */,
 				89D944652B98B7C600078C79 /* SecondaryState.swift in Sources */,
 				89D944632B98B7AE00078C79 /* PrimaryState.swift in Sources */,
 				89D9445F2B98749C00078C79 /* ButtonIconCalculable.swift in Sources */,
@@ -281,6 +288,7 @@
 				89D9446F2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift in Sources */,
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
 				89D9443F2B974E8700078C79 /* ButtonState.swift in Sources */,
+				89D944752B99E71900078C79 /* BrandButtonIconProtocol.swift in Sources */,
 				89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */,
 				89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */,
 				89D944612B9874E400078C79 /* ButtonIconCalculater.swift in Sources */,

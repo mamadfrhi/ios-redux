@@ -27,5 +27,5 @@ struct BrandSecondaryButtonColors {
     UIColor(named: "primary-success-btn-highlight-color")!// #316300
     
     static let secondarySuccessHighlightedColor =
-    UIColor(named: "secondary-action-btn-highlight-color")! // #ECF3E6
+    UIColor(named: "secondary-success-btn-highlight-color")! // #ECF3E6
 }

@@ -51,17 +51,14 @@ class ViewController: UIViewController {
                 }
                 newState.isEnabled = false
                 
-            case .setIcon(iconName: let iconName, iconPosition: let iconPosition, let iconCalculator):
-                if iconName == nil { break }
-                if iconPosition == .left {
-                    newState.leadingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
-                                                                                   buttonOrder: newState.buttonOrder)
+            case .setIcon(let brandButtonIcon):
+
+                if brandButtonIcon.iconPosition == .left {
+                    newState.leadingIcon = brandButtonIcon.render(buttonOrder: state.buttonOrder)
                 } else {
-                    newState.trailingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
-                                                                                    buttonOrder: newState.buttonOrder)
+                    newState.trailingIcon = brandButtonIcon.render(buttonOrder: state.buttonOrder)
                 }
             case .setButtonType(let buttonType):
-                if buttonType.hashValue == newState.buttonType.hashValue { return state }
                 
                 switch buttonType {
                 case .actionButton:
@@ -85,15 +82,11 @@ class ViewController: UIViewController {
             return newState
         }
         
-        buttonStore = ButtonStore(initialState: SecondaryState().render(), reducer: reducer)
+        buttonStore = ButtonStore(initialState: PrimaryState().render(), reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
         
-        let iconCalculator = ButtonIconCalculater()
-//        brandButton.store?.dispatch(action: .setIcon(iconName: "square.fill",
-//                                                     iconPosition: .right,
-//                                                     brandButtonCalculator: iconCalculator))
-        
-        brandButton.store?.dispatch(action: .setButtonType(.actionButton))
+        brandButton.store?.dispatch(action: .setIcon(BrandButtonIcon(iconPosition: .left)))
+        brandButton.store?.dispatch(action: .setButtonType(.successButton))
         brandButton.store?.dispatch(action: .setDisableStyle(buttonOrder: brandButton.store!.state.buttonOrder))
         brandButton.store?.dispatch(action: .setTitle("new title"))
         

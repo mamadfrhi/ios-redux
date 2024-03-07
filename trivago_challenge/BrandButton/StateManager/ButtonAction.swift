@@ -12,7 +12,7 @@ enum ButtonAction {
     case setHighlight(isHighlighted: Bool)
     case setTitle(String)
     case setButtonType(BrandButtonType)
-    case setIcon(iconName: String?, iconPosition: BrandButtonIconPosition, brandButtonCalculator: ButtonIconCalculable)
+    case setIcon(BrandButtonIcon)
 }
 
 

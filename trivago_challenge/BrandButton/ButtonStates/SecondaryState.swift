@@ -16,14 +16,14 @@ class SecondaryState: ButtonStateable {
     func render(isHighlighted: Bool = false, isEnabled: Bool = true) -> ButtonStateable {
         if isEnabled {
             self.backgroundColor = secondaryStyleCalculator.calculateBackColor(buttonType: self.buttonType,
-                                                                      buttonOrder: self.buttonOrder,
-                                                                      isHighlighted: isHighlighted)
+                                                                               buttonOrder: self.buttonOrder,
+                                                                               isHighlighted: isHighlighted)
             self.titleColor = secondaryStyleCalculator.calculateTitleColor(buttonType: self.buttonType,
-                                                                  buttonOrder: self.buttonOrder,
-                                                                  isHighlighted: isHighlighted)
+                                                                           buttonOrder: self.buttonOrder,
+                                                                           isHighlighted: isHighlighted)
             self.titleHighlightColor = secondaryStyleCalculator.calculateTitleHighlightColor(buttonType: self.buttonType,
-                                                                                    buttonOrder: self.buttonOrder,
-                                                                                    isHighlighted: isHighlighted)
+                                                                                             buttonOrder: self.buttonOrder,
+                                                                                             isHighlighted: isHighlighted)
             self.borderColor = secondaryStyleCalculator.calculateBorderColor(buttonType: self.buttonType, buttonOrder: self.buttonOrder)
         } else {
             self.backgroundColor = disableStyleCalculator.calculateDisableBackgroundColor(buttonOrder: self.buttonOrder)
