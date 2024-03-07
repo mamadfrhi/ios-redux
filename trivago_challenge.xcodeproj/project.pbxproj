@@ -159,11 +159,9 @@
 		89D9446B2B999F8000078C79 /* ButtonCalculators */ = {
 			isa = PBXGroup;
 			children = (
-				89D944522B98493200078C79 /* ButtonStyleCalculable.swift */,
-				89D944542B98495000078C79 /* PrimaryButtonStyleCalculator.swift */,
-				89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */,
+				89D944712B99DBEE00078C79 /* StyleCalculators */,
+				89D9446D2B99A02100078C79 /* DisableStyleCalculator */,
 				89D9446C2B999FA200078C79 /* IconCalculator */,
-				89D9446D2B99A02100078C79 /* DisableStyle */,
 			);
 			path = ButtonCalculators;
 			sourceTree = "<group>";
@@ -177,13 +175,13 @@
 			path = IconCalculator;
 			sourceTree = "<group>";
 		};
-		89D9446D2B99A02100078C79 /* DisableStyle */ = {
+		89D9446D2B99A02100078C79 /* DisableStyleCalculator */ = {
 			isa = PBXGroup;
 			children = (
 				89D9445C2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift */,
 				89D9445A2B986AE300078C79 /* ButtonDisableStyleCalculator.swift */,
 			);
-			path = DisableStyle;
+			path = DisableStyleCalculator;
 			sourceTree = "<group>";
 		};
 		89D944702B99BE4B00078C79 /* ButtonStates */ = {
@@ -193,6 +191,16 @@
 				89D944642B98B7C600078C79 /* SecondaryState.swift */,
 			);
 			path = ButtonStates;
+			sourceTree = "<group>";
+		};
+		89D944712B99DBEE00078C79 /* StyleCalculators */ = {
+			isa = PBXGroup;
+			children = (
+				89D944522B98493200078C79 /* ButtonStyleCalculable.swift */,
+				89D944542B98495000078C79 /* PrimaryButtonStyleCalculator.swift */,
+				89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */,
+			);
+			path = StyleCalculators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

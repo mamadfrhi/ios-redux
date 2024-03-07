@@ -7,6 +7,7 @@
 
 import UIKit
 
+//TODO: try to make it struct
 class SecondaryState: ButtonStateable {
     
     let secondaryStyleCalculator = SecondaryButtonStyleCalculator()
