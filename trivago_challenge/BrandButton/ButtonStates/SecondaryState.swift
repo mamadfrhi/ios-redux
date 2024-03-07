@@ -9,21 +9,21 @@ import UIKit
 
 class SecondaryState: ButtonStateable {
     
-    let normalStyleCalculator = SecondaryButtonStyleCalculator()
+    let secondaryStyleCalculator = SecondaryButtonStyleCalculator()
     let disableStyleCalculator = ButtonDisableStyleCalculator()
     
     func render(isHighlighted: Bool = false, isEnabled: Bool = true) -> ButtonStateable {
         if isEnabled {
-            self.backgroundColor = normalStyleCalculator.calculateBackColor(buttonType: self.buttonType,
+            self.backgroundColor = secondaryStyleCalculator.calculateBackColor(buttonType: self.buttonType,
                                                                       buttonOrder: self.buttonOrder,
                                                                       isHighlighted: isHighlighted)
-            self.titleColor = normalStyleCalculator.calculateTitleColor(buttonType: self.buttonType,
+            self.titleColor = secondaryStyleCalculator.calculateTitleColor(buttonType: self.buttonType,
                                                                   buttonOrder: self.buttonOrder,
                                                                   isHighlighted: isHighlighted)
-            self.titleHighlightColor = normalStyleCalculator.calculateTitleHighlightColor(buttonType: self.buttonType,
+            self.titleHighlightColor = secondaryStyleCalculator.calculateTitleHighlightColor(buttonType: self.buttonType,
                                                                                     buttonOrder: self.buttonOrder,
                                                                                     isHighlighted: isHighlighted)
-            self.borderColor = normalStyleCalculator.calculateBorderColor(buttonType: self.buttonType, buttonOrder: self.buttonOrder)
+            self.borderColor = secondaryStyleCalculator.calculateBorderColor(buttonType: self.buttonType, buttonOrder: self.buttonOrder)
         } else {
             self.backgroundColor = disableStyleCalculator.calculateDisableBackgroundColor(buttonOrder: self.buttonOrder)
             self.titleColor = disableStyleCalculator.calculateDisableTitleColor(buttonOrder: self.buttonOrder)
