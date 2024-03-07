@@ -127,6 +127,7 @@
 		89D9443D2B974DF500078C79 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				89D9444F2B9797ED00078C79 /* ButtonColors */,
 				89D9442B2B974BAA00078C79 /* ViewController.swift */,
 				89D9442D2B974BAA00078C79 /* Main.storyboard */,
 				89D944322B974BAB00078C79 /* LaunchScreen.storyboard */,
@@ -137,11 +138,10 @@
 		89D944402B974E9C00078C79 /* BrandButton */ = {
 			isa = PBXGroup;
 			children = (
+				89D944472B974F4600078C79 /* BrandButton.swift */,
 				89D9446A2B999F5600078C79 /* StateManager */,
 				89D944702B99BE4B00078C79 /* ButtonStates */,
 				89D9446B2B999F8000078C79 /* ButtonCalculators */,
-				89D9444F2B9797ED00078C79 /* ButtonColors */,
-				89D944472B974F4600078C79 /* BrandButton.swift */,
 				89D9447C2B9A185C00078C79 /* Renderers */,
 			);
 			path = BrandButton;
