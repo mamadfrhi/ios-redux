@@ -20,6 +20,5 @@ struct PrimaryButtonIconCalculater: ButtonIconCalculable {
         return UIImage(systemName: iconName, withConfiguration: largeConfig)?
             .withRenderingMode(.alwaysOriginal)
             .withTintColor(.white)
-        
     }
 }

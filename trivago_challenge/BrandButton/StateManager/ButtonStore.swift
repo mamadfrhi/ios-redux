@@ -7,6 +7,9 @@
 
 
 class ButtonStore {
+    
+    //TODO: Add renderers here
+    
     var state: ButtonStateable {
         didSet {
             stateDidUpdate()

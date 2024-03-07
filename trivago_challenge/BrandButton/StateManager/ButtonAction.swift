@@ -8,7 +8,7 @@
 import UIKit
 
 enum ButtonAction {
-    case setDisableStyle(buttonOrder: BrandButtonOrder)
+    case setDisableStyle(isDisabled: Bool)
     case setHighlight(isHighlighted: Bool)
     case setTitle(String)
     case setButtonOrder(buttonOrder: BrandButtonOrder)

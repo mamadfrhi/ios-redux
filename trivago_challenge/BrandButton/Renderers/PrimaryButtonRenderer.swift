@@ -16,7 +16,7 @@ struct PrimaryButtonRenderer: BrandButtonRenderable {
     ButtonDisableStyleCalculable = ButtonDisableStyleCalculator()
     
     var iconCalculator:
-    ButtonIconCalculable = SecondaryButtonIconCalculater()
+    ButtonIconCalculable = PrimaryButtonIconCalculater()
     
     func render(buttonState: ButtonStateable) -> ButtonStateable {
         
