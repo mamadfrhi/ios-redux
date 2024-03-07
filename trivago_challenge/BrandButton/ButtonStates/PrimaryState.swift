@@ -24,9 +24,11 @@ class PrimaryState: ButtonStateable {
     
     var titleColor: UIColor = .white
     
-    var leadingIcon: UIImage? = nil
+    var iconName: String? = nil
     
-    var trailingIcon: UIImage? = nil
+    var iconImage: UIImage?  = nil
+    
+    var iconPosition: BrandButtonIconPosition? = nil
     
     var iconColor: UIColor? = nil
     

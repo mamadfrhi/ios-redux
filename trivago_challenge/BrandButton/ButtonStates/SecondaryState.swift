@@ -20,11 +20,13 @@ class SecondaryState: ButtonStateable {
     
     var titleColor: UIColor = BrandSecondaryButtonColors.secondarySuccessTitleColor
     
-    var leadingIcon: UIImage? = nil
-    
-    var trailingIcon: UIImage? = nil
+    var iconName: String? = nil
     
     var iconColor: UIColor? = nil
+    
+    var iconImage: UIImage?  = nil
+    
+    var iconPosition: BrandButtonIconPosition? = nil
     
     var isEnabled = true
     

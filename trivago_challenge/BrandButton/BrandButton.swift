@@ -49,8 +49,7 @@ class BrandButton: UIButton {
         
         
         setBorderColor(with: state)
-        set(leadingIcon: state.leadingIcon,
-            trailingIcon: state.trailingIcon)
+        set(iconPosition: state.iconPosition, iconImage: state.iconImage)
         set(insetValue: 10)
         set(font: UIFont.systemFont(ofSize: 17, weight: .medium))
         
@@ -78,18 +77,14 @@ class BrandButton: UIButton {
         titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
     }
     
-    private func set(leadingIcon: UIImage?, trailingIcon: UIImage?) {
+    private func set(iconPosition: BrandButtonIconPosition?, iconImage: UIImage?) {
         
-        var iconImage: UIImage?
-        
-        if let leadingIcon = leadingIcon {
-            iconImage = leadingIcon
+        if iconPosition == .left {
             semanticContentAttribute = .forceLeftToRight
             imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
             titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
             
-        } else if let trailingIcon = trailingIcon {
-            iconImage = trailingIcon
+        } else {
             semanticContentAttribute = .forceRightToLeft
             imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
             titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)

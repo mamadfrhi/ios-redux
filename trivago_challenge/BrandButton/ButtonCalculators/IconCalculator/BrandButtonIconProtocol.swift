@@ -8,8 +8,6 @@
 import UIKit
 
 protocol BrandButtonIconProtocol {
-    var iconCalculator: ButtonIconCalculable { get set }
-    var iconName: String { get set }
+    var iconName: String { get }
     var iconPosition: BrandButtonIconPosition { get set }
-    func render(buttonOrder: BrandButtonOrder) -> UIImage?
 }

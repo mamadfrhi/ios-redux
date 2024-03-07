@@ -13,9 +13,9 @@ protocol ButtonStateable {
     var borderColor: UIColor? { get set }
     var titleHighlightColor: UIColor? { get set }
     var titleColor: UIColor { get set }
-    var leadingIcon: UIImage? { get set }
-    var trailingIcon: UIImage? { get set }
-    var iconColor: UIColor? { get set }
+    var iconImage: UIImage? { get set }
+    var iconPosition: BrandButtonIconPosition? { get set }
+    var iconName: String? { get set }
     var isEnabled: Bool { get set }
     var isHighlighted: Bool { get set }
     var buttonOrder: BrandButtonOrder { get set }

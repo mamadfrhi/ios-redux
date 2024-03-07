@@ -25,7 +25,7 @@
 		89D9445B2B986AE300078C79 /* ButtonDisableStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445A2B986AE300078C79 /* ButtonDisableStyleCalculator.swift */; };
 		89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445C2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift */; };
 		89D9445F2B98749C00078C79 /* ButtonIconCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */; };
-		89D944612B9874E400078C79 /* ButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944602B9874E400078C79 /* ButtonIconCalculater.swift */; };
+		89D944612B9874E400078C79 /* SecondaryButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */; };
 		89D944632B98B7AE00078C79 /* PrimaryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944622B98B7AE00078C79 /* PrimaryState.swift */; };
 		89D944652B98B7C600078C79 /* SecondaryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944642B98B7C600078C79 /* SecondaryState.swift */; };
 		89D9446F2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */; };
@@ -37,6 +37,7 @@
 		89D9447E2B9A191E00078C79 /* BrandButtonOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */; };
 		89D944802B9A193100078C79 /* BrandButtonIconPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */; };
 		89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944812B9A195600078C79 /* BrandButtonType.swift */; };
+		89D944852B9A53B500078C79 /* PrimaryButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +61,7 @@
 		89D9445A2B986AE300078C79 /* ButtonDisableStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDisableStyleCalculator.swift; sourceTree = "<group>"; };
 		89D9445C2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDisableStyleCalculable.swift; sourceTree = "<group>"; };
 		89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconCalculable.swift; sourceTree = "<group>"; };
-		89D944602B9874E400078C79 /* ButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconCalculater.swift; sourceTree = "<group>"; };
+		89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonIconCalculater.swift; sourceTree = "<group>"; };
 		89D944622B98B7AE00078C79 /* PrimaryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryState.swift; sourceTree = "<group>"; };
 		89D944642B98B7C600078C79 /* SecondaryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryState.swift; sourceTree = "<group>"; };
 		89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyleCalculator.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonOrder.swift; sourceTree = "<group>"; };
 		89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconPosition.swift; sourceTree = "<group>"; };
 		89D944812B9A195600078C79 /* BrandButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonType.swift; sourceTree = "<group>"; };
+		89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonIconCalculater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,9 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */,
-				89D944602B9874E400078C79 /* ButtonIconCalculater.swift */,
-				89D944722B99E68900078C79 /* BrandButtonIcon.swift */,
 				89D944742B99E71900078C79 /* BrandButtonIconProtocol.swift */,
+				89D944722B99E68900078C79 /* BrandButtonIcon.swift */,
+				89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */,
+				89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */,
 			);
 			path = IconCalculator;
 			sourceTree = "<group>";
@@ -330,9 +333,10 @@
 				89D944752B99E71900078C79 /* BrandButtonIconProtocol.swift in Sources */,
 				89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */,
 				89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */,
-				89D944612B9874E400078C79 /* ButtonIconCalculater.swift in Sources */,
+				89D944612B9874E400078C79 /* SecondaryButtonIconCalculater.swift in Sources */,
 				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,
 				89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */,
+				89D944852B9A53B500078C79 /* PrimaryButtonIconCalculater.swift in Sources */,
 				89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */,
 				89D944532B98493300078C79 /* ButtonStyleCalculable.swift in Sources */,
 				89D9445B2B986AE300078C79 /* ButtonDisableStyleCalculator.swift in Sources */,

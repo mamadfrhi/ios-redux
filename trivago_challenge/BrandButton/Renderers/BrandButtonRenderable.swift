@@ -10,6 +10,7 @@ import Foundation
 protocol BrandButtonRenderable {
     var styleCalculator: ButtonStyleCalculable { get set }
     var disableStyleCalculator: ButtonDisableStyleCalculable { get set }
+    var iconCalculator: ButtonIconCalculable { get set }
     
     func render(buttonState: ButtonStateable) -> ButtonStateable
 }

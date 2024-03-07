@@ -57,12 +57,16 @@ class ViewController: UIViewController {
                 }
                 
             case .setIcon(let brandButtonIcon):
+                newState.iconName = brandButtonIcon.iconName
+                newState.iconPosition = brandButtonIcon.iconPosition
                 
-                if brandButtonIcon.iconPosition == .left {
-                    newState.leadingIcon = brandButtonIcon.render(buttonOrder: state.buttonOrder)
-                } else {
-                    newState.trailingIcon = brandButtonIcon.render(buttonOrder: state.buttonOrder)
+                switch state.buttonOrder {
+                case .Primary:
+                    newState = primaryRenderer.render(buttonState: newState)
+                case .Secoundary:
+                    newState = secondaryRenderer.render(buttonState: newState)
                 }
+                
             case .setButtonOrder(let buttonOrder):
                 
                 newState.buttonType = state.buttonType
@@ -75,6 +79,7 @@ class ViewController: UIViewController {
                     newState.buttonOrder = .Secoundary
                     newState = secondaryRenderer.render(buttonState: newState)
                 }
+                
             case .setButtonType(buttonType: let buttonType):
                 switch buttonType {
                 case .actionButton:
@@ -101,13 +106,15 @@ class ViewController: UIViewController {
         
         
         let initState = primaryRenderer.render(buttonState: PrimaryState())
+        //        let initState = secondaryRenderer.render(buttonState: SecondaryState())
         buttonStore = ButtonStore(initialState: initState, reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
         
-        brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: BrandButtonIcon(iconPosition: .left)))
+        let icon = BrandButtonIcon(iconPosition: .right)
+        brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: icon))
         
-        brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .Secoundary))
-        brandButton.store?.dispatch(action: .setButtonType(buttonType: .actionButton))
+//        brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .Secoundary))
+//        brandButton.store?.dispatch(action: .setButtonType(buttonType: .actionButton))
 //        brandButton.store?.dispatch(action: .setDisableStyle(buttonOrder: brandButton.store!.state.buttonOrder))
         brandButton.store?.dispatch(action: .setTitle("new title"))
         

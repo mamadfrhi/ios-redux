@@ -9,8 +9,14 @@ import Foundation
 
 struct PrimaryButtonRenderer: BrandButtonRenderable {
     
-    var styleCalculator: ButtonStyleCalculable = PrimaryButtonStyleCalculator()
-    var disableStyleCalculator: ButtonDisableStyleCalculable = ButtonDisableStyleCalculator()
+    var styleCalculator:
+    ButtonStyleCalculable = PrimaryButtonStyleCalculator()
+    
+    var disableStyleCalculator:
+    ButtonDisableStyleCalculable = ButtonDisableStyleCalculator()
+    
+    var iconCalculator:
+    ButtonIconCalculable = SecondaryButtonIconCalculater()
     
     func render(buttonState: ButtonStateable) -> ButtonStateable {
         
@@ -37,6 +43,9 @@ struct PrimaryButtonRenderer: BrandButtonRenderable {
             buttonState.borderColor = disableStyleCalculator
                 .calculateDisableBorderColor(buttonOrder: buttonState.buttonOrder)
         }
+        
+        buttonState.iconImage = iconCalculator
+            .calculateIcon(iconName: buttonState.iconName)
         
         return buttonState
     }

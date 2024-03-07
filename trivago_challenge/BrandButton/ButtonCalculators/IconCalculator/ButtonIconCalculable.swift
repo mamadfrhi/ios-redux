@@ -8,5 +8,5 @@
 import UIKit
 
 protocol ButtonIconCalculable {
-    func calculateBrandButtonIcon(iconName: String?, buttonOrder: BrandButtonOrder) -> UIImage?
+    func calculateIcon(iconName: String?) -> UIImage?
 }
