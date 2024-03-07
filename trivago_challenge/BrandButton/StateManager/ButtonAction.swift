@@ -11,8 +11,8 @@ enum ButtonAction {
     case setDisableStyle(buttonOrder: BrandButtonOrder)
     case setHighlight(isHighlighted: Bool)
     case setTitle(String)
-    case setButtonType(BrandButtonType)
-    case setIcon(BrandButtonIcon)
+    case setButtonType(buttonType: BrandButtonType)
+    case setIcon(brandButtonIcon: BrandButtonIcon)
 }
 
 

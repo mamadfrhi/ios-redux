@@ -85,8 +85,9 @@ class ViewController: UIViewController {
         buttonStore = ButtonStore(initialState: PrimaryState().render(), reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
         
-        brandButton.store?.dispatch(action: .setIcon(BrandButtonIcon(iconPosition: .left)))
-        brandButton.store?.dispatch(action: .setButtonType(.successButton))
+        brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: BrandButtonIcon(iconPosition: .left)))
+        
+        brandButton.store?.dispatch(action: .setButtonType(buttonType: .successButton))
         brandButton.store?.dispatch(action: .setDisableStyle(buttonOrder: brandButton.store!.state.buttonOrder))
         brandButton.store?.dispatch(action: .setTitle("new title"))
         
