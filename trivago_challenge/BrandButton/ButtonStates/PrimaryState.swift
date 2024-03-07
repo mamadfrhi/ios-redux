@@ -36,7 +36,7 @@ class PrimaryState: ButtonStateable {
     
     var isHighlighted = false
     
-    var buttonOrder: BrandButtonOrder = .Primary
+    var buttonOrder: BrandButtonOrder = .primary
     
     var buttonType: BrandButtonType = .successButton
 }

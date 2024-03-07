@@ -11,27 +11,27 @@ struct ButtonDisableStyleCalculator: ButtonDisableStyleCalculable {
     
     func calculateDisableBorderColor(buttonOrder: BrandButtonOrder) -> UIColor? {
         switch buttonOrder {
-        case .Primary:
+        case .primary:
                 return nil
-        case .Secoundary:
+        case .secoundary:
             return .gray
         }
     }
     
     func calculateDisableBackgroundColor(buttonOrder: BrandButtonOrder) -> UIColor? {
         switch buttonOrder {
-        case .Primary:
+        case .primary:
             return .gray
-        case .Secoundary:
+        case .secoundary:
             return nil
         }
     }
     
     func calculateDisableTitleColor(buttonOrder: BrandButtonOrder) -> UIColor {
         switch buttonOrder {
-        case .Primary:
+        case .primary:
             return .white
-        case .Secoundary:
+        case .secoundary:
             return .gray
         }
     }

@@ -28,13 +28,13 @@ class ViewController: UIViewController {
                 newState.isHighlighted = isHighlighted
                 
                 switch state.buttonOrder {
-                case .Primary:
+                case .primary:
                     let primaryButton = primaryRenderer.render(buttonState: newState)
                     newState.backgroundColor = primaryButton.backgroundColor
                     newState.titleColor = primaryButton.titleColor
                     newState.titleHighlightColor = primaryButton.titleHighlightColor
                     newState.borderColor = primaryButton.borderColor
-                case .Secoundary:
+                case .secoundary:
                     let secondaryButton = secondaryRenderer.render(buttonState: newState)
                     newState.backgroundColor = secondaryButton.backgroundColor
                     newState.titleColor = secondaryButton.titleColor
@@ -52,9 +52,9 @@ class ViewController: UIViewController {
                 print(newState.isEnabled)
                 
                 switch state.buttonOrder {
-                case .Primary:
+                case .primary:
                     newState = primaryRenderer.render(buttonState: newState)
-                case .Secoundary:
+                case .secoundary:
                     newState = secondaryRenderer.render(buttonState: newState)
                 }
                 
@@ -63,9 +63,9 @@ class ViewController: UIViewController {
                 newState.iconPosition = brandButtonIcon.iconPosition
                 
                 switch state.buttonOrder {
-                case .Primary:
+                case .primary:
                     newState = primaryRenderer.render(buttonState: newState)
-                case .Secoundary:
+                case .secoundary:
                     newState = secondaryRenderer.render(buttonState: newState)
                 }
                 
@@ -75,11 +75,11 @@ class ViewController: UIViewController {
                 newState.buttonType = state.buttonType
                 
                 switch buttonOrder {
-                case .Primary:
-                    newState.buttonOrder = .Primary
+                case .primary:
+                    newState.buttonOrder = .primary
                     newState = primaryRenderer.render(buttonState: newState)
-                case .Secoundary:
-                    newState.buttonOrder = .Secoundary
+                case .secoundary:
+                    newState.buttonOrder = .secoundary
                     newState = secondaryRenderer.render(buttonState: newState)
                 }
                 
@@ -88,18 +88,18 @@ class ViewController: UIViewController {
                 case .actionButton:
                     newState.buttonType = .actionButton
                     switch newState.buttonOrder {
-                    case .Primary:
+                    case .primary:
                         newState = primaryRenderer.render(buttonState: newState)
-                    case .Secoundary:
+                    case .secoundary:
                         newState = secondaryRenderer.render(buttonState: newState)
                     }
                     
                 case .successButton:
                     newState.buttonType = .successButton
                     switch newState.buttonOrder {
-                    case .Primary:
+                    case .primary:
                         newState = primaryRenderer.render(buttonState: newState)
-                    case .Secoundary:
+                    case .secoundary:
                         newState = secondaryRenderer.render(buttonState: newState)
                     }
                 }
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
         brandButton.store?.dispatch(action: .setDisableStyle(isDisabled: true))
         brandButton.store?.dispatch(action: .setButtonType(buttonType: .actionButton))
         brandButton.store?.dispatch(action: .setDisableStyle(isDisabled: false))
-        brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .Secoundary))
+        brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
         
         //TODO: if set disable then set order to primary, the style won't fit
         

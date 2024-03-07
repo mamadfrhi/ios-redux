@@ -65,7 +65,7 @@ class BrandButton: UIButton {
     }
     
     private func setBorderColor(with state: ButtonStateable) {
-        layer.borderWidth = state.buttonOrder == .Secoundary ? 1 : 0
+        layer.borderWidth = state.buttonOrder == .secoundary ? 1 : 0
         layer.borderColor = state.borderColor?.cgColor
     }
     

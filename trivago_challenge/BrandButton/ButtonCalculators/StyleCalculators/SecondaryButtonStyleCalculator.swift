@@ -43,8 +43,7 @@ struct SecondaryButtonStyleCalculator: ButtonStyleCalculable {
     
     func calculateTitleColor(buttonType: BrandButtonType,
                              buttonOrder: BrandButtonOrder,
-                             isHighlighted: Bool
-    ) -> UIColor {
+                             isHighlighted: Bool) -> UIColor {
         
         switch buttonType {
         case .successButton:

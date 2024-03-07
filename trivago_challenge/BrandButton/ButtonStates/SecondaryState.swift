@@ -32,7 +32,7 @@ class SecondaryState: ButtonStateable {
     
     var isHighlighted = false
     
-    var buttonOrder: BrandButtonOrder = .Secoundary
+    var buttonOrder: BrandButtonOrder = .secoundary
     
     var buttonType: BrandButtonType = .successButton
 }
