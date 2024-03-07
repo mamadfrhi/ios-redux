@@ -14,19 +14,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.view.backgroundColor = .red
-        
-        let initialState = ButtonState(
-            title: "Init State",
-            backgroundColor: UIColor.red,
-            titleColor: UIColor.white,
-            leadingIcon: nil,
-            trailingIcon: nil,
-            isEnabled: true,
-            isHighlighted: false,
-            buttonOrder: .Secoundary,
-            buttonType: .successButton
-        )
         
         let reducer: ButtonReducer = { state, action in
             var newState = state
@@ -36,79 +23,64 @@ class ViewController: UIViewController {
                 break
                 
                 
-            case .setHighlight(let backColor, let titleColor, let titleHighlight):
-                newState.backgroundColor = backColor
-                newState.titleColor = titleColor
-                newState.titleHighlightColor = titleHighlight
-                
+            case .setHighlight(let isHighlighted):
+                switch state.buttonOrder {
+                case .Primary:
+                    let primaryButton = PrimaryState().render(isHighlighted: isHighlighted)
+                    newState.backgroundColor = primaryButton.backgroundColor
+                    newState.titleColor = primaryButton.titleColor
+                    newState.titleHighlightColor = primaryButton.titleHighlightColor
+                    newState.borderColor = primaryButton.borderColor
+                case .Secoundary:
+                    let secondaryButton = SecondaryState().render(isHighlighted: isHighlighted)
+                    newState.backgroundColor = secondaryButton.backgroundColor
+                    newState.titleColor = secondaryButton.titleColor
+                    newState.titleHighlightColor = secondaryButton.titleHighlightColor
+                    newState.borderColor = secondaryButton.borderColor
+                }
                 
             case .setTitle(let title):
                 newState.title = title
                 
-            case .setOrder(let buttonOrder, let styleCalculator):
-                newState.buttonOrder = buttonOrder
-                newState.backgroundColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
-                                                                              buttonOrder: buttonOrder,
-                                                                              isHighlighted: false)
-                newState.titleColor = styleCalculator.calculateTitleColor(buttonType: state.buttonType,
-                                                                          buttonOrder: buttonOrder,
-                                                                          isHighlighted: false)
-                newState.titleHighlightColor = styleCalculator.calculateTitleHighlightColor(buttonType: state.buttonType,
-                                                                                            buttonOrder: buttonOrder,
-                                                                                            isHighlighted: false)
-                newState.borderColor = styleCalculator.calculateBorderColor(buttonType: newState.buttonType,
-                                                                            buttonOrder: buttonOrder)
+            case .setDisableStyle(let order):
                 
+                var state: ButtonStateable
+                switch order {
+                case .Primary:
+                    state = PrimaryState().render(isEnabled: false)
+                case .Secoundary:
+                    state = SecondaryState().render(isEnabled: false)
+                }
                 
-                
-                
-            case .setDisableStyle(let disableCalculator):
-                newState.backgroundColor = disableCalculator.calculateDisableBackgroundColor(buttonType: newState.buttonType,
-                                                                                             buttonOrder: newState.buttonOrder)
-                newState.titleColor = disableCalculator.calculateDisableTitleColor(buttonType: newState.buttonType,
-                                                                                   buttonOrder: newState.buttonOrder)
-                newState.borderColor = disableCalculator.calculateDisableBorderColor(buttonType: newState.buttonType,
-                                                                                     buttonOrder: newState.buttonOrder)
+                newState.backgroundColor = state.backgroundColor
+                newState.titleColor = state.titleColor
+                newState.borderColor = state.borderColor
                 newState.isEnabled = false
-            case .setEnableStyle(let enableCalculator):
-                newState.backgroundColor = enableCalculator.calculateEnableBackgroundColor(buttonType: newState.buttonType,
-                                                                                           buttonOrder: newState.buttonOrder)
-                newState.titleColor = enableCalculator.calculateEnableTitleColor(buttonType: newState.buttonType,
-                                                                                 buttonOrder: newState.buttonOrder)
-                newState.borderColor = enableCalculator.calculateEnableBorderColor(buttonType: newState.buttonType,
-                                                                                   buttonOrder: newState.buttonOrder)
-                newState.isEnabled = true
                 
             case .setIcon(iconName: let iconName, iconPosition: let iconPosition, let iconCalculator):
                 if iconName == nil { break }
                 if iconPosition == .left {
                     newState.leadingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
-                                                                                       buttonOrder: newState.buttonOrder)
+                                                                                   buttonOrder: newState.buttonOrder)
                 } else {
                     newState.trailingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
-                                                                                        buttonOrder: newState.buttonOrder)
+                                                                                    buttonOrder: newState.buttonOrder)
                 }
             }
             return newState
         }
-        let styleCalculator = ButtonStyleCalculator()
-        buttonStore = ButtonStore(initialState: initialState, reducer: reducer)
+        
+        buttonStore = ButtonStore(initialState: SecondaryState().render(), reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
-        brandButton.store?.dispatch(action: .setOrder(.Secoundary, styleCalculator))
         
         let iconCalculator = BrandButtonIconCalculater()
         brandButton.store?.dispatch(action: .setIcon(iconName: "square.fill",
                                                      iconPosition: .right,
                                                      brandButtonCalculator: iconCalculator))
+        // REMOVE ORDER
+        brandButton.store?.dispatch(action: .setDisableStyle(buttonOrder: brandButton.store!.state.buttonOrder))
         
-        let disableCalculator = BrandButtonDisableStyleCalculator()
-        brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
-        
-        let enableCalculator = BrandButtonEnableStyleCalculator()
-        brandButton.store?.dispatch(action: .setEnableStyle(enableCalculator))
-        
-        //        brandButton.store?.dispatch(action: .setOrder(.Primary, styleCalculator))
-//        brandButton.store?.dispatch(action: .setDisableStyle(disableCalculator))
+        //TODO: if set disable then set order to primary, the style won't fit
         
         view.addSubview(brandButton)
         

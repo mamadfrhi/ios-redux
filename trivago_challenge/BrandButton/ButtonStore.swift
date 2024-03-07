@@ -7,7 +7,7 @@
 
 
 class ButtonStore {
-    var state: ButtonState {
+    var state: ButtonStateable {
         didSet {
             stateDidUpdate()
         }
@@ -15,7 +15,7 @@ class ButtonStore {
     private let reducer: ButtonReducer
     var stateDidUpdate: () -> Void = {}
     
-    init(initialState: ButtonState, reducer: @escaping ButtonReducer) {
+    init(initialState: ButtonStateable, reducer: @escaping ButtonReducer) {
         self.state = initialState
         self.reducer = reducer
     }

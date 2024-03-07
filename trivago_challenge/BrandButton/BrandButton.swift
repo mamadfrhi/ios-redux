@@ -31,30 +31,16 @@ class BrandButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            
-            guard let state = store?.state else { return }
-            let styleCalculator = ButtonStyleCalculator()
-            let backColor = styleCalculator.calculateBackColor(buttonType: state.buttonType,
-                                                               buttonOrder: state.buttonOrder,
-                                                               isHighlighted: isHighlighted)
-            let titleColor = styleCalculator.calculateTitleColor(buttonType: state.buttonType,
-                                                                 buttonOrder: state.buttonOrder,
-                                                                 isHighlighted: isHighlighted)
-            let titleHighlightColor = styleCalculator.calculateTitleHighlightColor(buttonType: state.buttonType,
-                                                                                   buttonOrder: state.buttonOrder,
-                                                                                   isHighlighted: isHighlighted)
-            store?.dispatch(action: .setHighlight(backgroundColor: backColor,
-                                                  titleColor: titleColor,
-                                                  titleHighlightColor: titleHighlightColor))
+            store?.dispatch(action: .setHighlight(isHighlighted: isHighlighted))
         }
     }
     
-    private func updateAppearance(state: ButtonState) {
+    private func updateAppearance(state: ButtonStateable) {
         setTitle(state.title, for: .normal)
         layer.cornerRadius = 5
         self.isEnabled = state.isEnabled
         
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.25) {
             self.setTitleColor(state.titleColor, for: .normal)
             self.backgroundColor = state.backgroundColor
         }
@@ -69,7 +55,7 @@ class BrandButton: UIButton {
         sizeToFit()
     }
     
-    private func setBorderColor(with state: ButtonState) {
+    private func setBorderColor(with state: ButtonStateable) {
         layer.borderWidth = state.buttonOrder == .Secoundary ? 1 : 0
         layer.borderColor = state.borderColor?.cgColor
     }

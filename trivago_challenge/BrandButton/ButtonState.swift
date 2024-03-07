@@ -7,19 +7,21 @@
 
 import UIKit
 
-struct ButtonState {
-    var title: String
-    var backgroundColor: UIColor?
-    var borderColor: UIColor?
-    var titleHighlightColor: UIColor?
-    var titleColor: UIColor
-    var leadingIcon: UIImage?
-    var trailingIcon: UIImage?
-    var iconColor: UIColor?
-    var isEnabled: Bool
-    var isHighlighted: Bool
-    var buttonOrder: BrandButtonOrder
-    var buttonType: BrandButtonType
+protocol ButtonStateable {
+    var title: String { get set }
+    var backgroundColor: UIColor? { get set }
+    var borderColor: UIColor? { get set }
+    var titleHighlightColor: UIColor? { get set }
+    var titleColor: UIColor { get set }
+    var leadingIcon: UIImage? { get set }
+    var trailingIcon: UIImage? { get set }
+    var iconColor: UIColor? { get set }
+    var isEnabled: Bool { get set }
+    var isHighlighted: Bool { get set }
+    var buttonOrder: BrandButtonOrder { get }
+    var buttonType: BrandButtonType { get set }
+    
+    func render(isHighlighted: Bool, isEnabled: Bool) -> ButtonStateable
 }
 
 enum BrandButtonType {

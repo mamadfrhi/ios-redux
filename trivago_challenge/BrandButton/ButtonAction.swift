@@ -9,11 +9,10 @@ import UIKit
 
 enum ButtonAction {
     case setBackgroundColor
-    case setDisableStyle(BrandButtonDisableStyleCalculable)
-    case setEnableStyle(BrandButtonEnableStyleCalculable)
-    case setHighlight(backgroundColor: UIColor?, titleColor: UIColor, titleHighlightColor: UIColor?)
+    case setDisableStyle(buttonOrder: BrandButtonOrder)
+    case setHighlight(isHighlighted: Bool)
     case setTitle(String)
-    case setOrder(BrandButtonOrder, BrandButtonStyleCalculable)
+//    case setOrder(BrandButtonOrder, BrandButtonStyleCalculable)
     case setIcon(iconName: String?, iconPosition: BrandButtonIconPosition, brandButtonCalculator: BrandButtonIconCalculable)
 }
 
