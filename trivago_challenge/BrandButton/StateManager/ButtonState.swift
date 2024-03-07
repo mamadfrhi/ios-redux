@@ -21,7 +21,3 @@ protocol ButtonStateable {
     var buttonOrder: BrandButtonOrder { get set }
     var buttonType: BrandButtonType { get set }
 }
-
-enum BrandButtonType {
-    case successButton, actionButton
-}

@@ -34,6 +34,9 @@
 		89D944772B9A17C000078C79 /* BrandButtonRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944762B9A17C000078C79 /* BrandButtonRenderable.swift */; };
 		89D944792B9A17D600078C79 /* SecondaryButtonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */; };
 		89D9447B2B9A182100078C79 /* PrimaryButtonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447A2B9A182100078C79 /* PrimaryButtonRenderer.swift */; };
+		89D9447E2B9A191E00078C79 /* BrandButtonOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */; };
+		89D944802B9A193100078C79 /* BrandButtonIconPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */; };
+		89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944812B9A195600078C79 /* BrandButtonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		89D944762B9A17C000078C79 /* BrandButtonRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonRenderable.swift; sourceTree = "<group>"; };
 		89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonRenderer.swift; sourceTree = "<group>"; };
 		89D9447A2B9A182100078C79 /* PrimaryButtonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonRenderer.swift; sourceTree = "<group>"; };
+		89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonOrder.swift; sourceTree = "<group>"; };
+		89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconPosition.swift; sourceTree = "<group>"; };
+		89D944812B9A195600078C79 /* BrandButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +208,9 @@
 			children = (
 				89D944622B98B7AE00078C79 /* PrimaryState.swift */,
 				89D944642B98B7C600078C79 /* SecondaryState.swift */,
+				89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */,
+				89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */,
+				89D944812B9A195600078C79 /* BrandButtonType.swift */,
 			);
 			path = ButtonStates;
 			sourceTree = "<group>";
@@ -306,6 +315,8 @@
 				89D9445F2B98749C00078C79 /* ButtonIconCalculable.swift in Sources */,
 				89D944442B974EDF00078C79 /* ButtonReducer.swift in Sources */,
 				89D9446F2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift in Sources */,
+				89D944802B9A193100078C79 /* BrandButtonIconPosition.swift in Sources */,
+				89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */,
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
 				89D9443F2B974E8700078C79 /* ButtonState.swift in Sources */,
 				89D944752B99E71900078C79 /* BrandButtonIconProtocol.swift in Sources */,
@@ -320,6 +331,7 @@
 				89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */,
 				89D944552B98495000078C79 /* PrimaryButtonStyleCalculator.swift in Sources */,
 				89D944422B974EC700078C79 /* ButtonAction.swift in Sources */,
+				89D9447E2B9A191E00078C79 /* BrandButtonOrder.swift in Sources */,
 				89D944482B974F4600078C79 /* BrandButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

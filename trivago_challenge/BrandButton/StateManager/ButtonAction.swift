@@ -15,13 +15,3 @@ enum ButtonAction {
     case setButtonType(buttonType: BrandButtonType)
     case setIcon(brandButtonIcon: BrandButtonIcon)
 }
-
-
-enum BrandButtonOrder {
-    case Primary
-    case Secoundary
-}
-
-enum BrandButtonIconPosition {
-    case left, right
-}
