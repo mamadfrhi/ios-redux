@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol BrandButtonStyleCalculable {
+protocol ButtonStyleCalculable {
     
     func calculateBackColor(buttonType: BrandButtonType, buttonOrder: BrandButtonOrder, isHighlighted: Bool) -> UIColor?
     

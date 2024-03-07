@@ -10,7 +10,7 @@ import UIKit
 class SecondaryState: ButtonStateable {
     
     let normalStyleCalculator = SecondaryButtonStyleCalculator()
-    let disableStyleCalculator = BrandSecondaryButtonDisableStyleCalculator()
+    let disableStyleCalculator = ButtonDisableStyleCalculator()
     
     func render(isHighlighted: Bool = false, isEnabled: Bool = true) -> ButtonStateable {
         if isEnabled {
@@ -25,9 +25,9 @@ class SecondaryState: ButtonStateable {
                                                                                     isHighlighted: isHighlighted)
             self.borderColor = normalStyleCalculator.calculateBorderColor(buttonType: self.buttonType, buttonOrder: self.buttonOrder)
         } else {
-            self.backgroundColor = disableStyleCalculator.calculateEnableBackgroundColor()
-            self.titleColor = disableStyleCalculator.calculateEnableTitleColor(buttonType: self.buttonType)
-            self.borderColor = disableStyleCalculator.calculateEnableBorderColor(buttonType: self.buttonType)
+            self.backgroundColor = disableStyleCalculator.calculateDisableBackgroundColor(buttonOrder: self.buttonOrder)
+            self.titleColor = disableStyleCalculator.calculateDisableTitleColor(buttonOrder: self.buttonOrder)
+            self.borderColor = disableStyleCalculator.calculateDisableBorderColor(buttonOrder: self.buttonOrder)
         }
         
         return self
@@ -35,13 +35,13 @@ class SecondaryState: ButtonStateable {
     
     var title = "Secondary Button"
     //TODO: HighlightColor isn't needed
-    var backgroundColor: UIColor? = BrandSecondaryButtonColors.secondarySuccessButtonHighlightColor
+    var backgroundColor: UIColor? = nil
     
     var borderColor: UIColor? = nil
     
     var titleHighlightColor: UIColor? = nil
     
-    var titleColor: UIColor = BrandSecondaryButtonColors.secondarySuccessButtonHighlightColor
+    var titleColor: UIColor = BrandSecondaryButtonColors.secondarySuccessTitleColor
     
     var leadingIcon: UIImage? = nil
     
@@ -55,5 +55,5 @@ class SecondaryState: ButtonStateable {
     
     var buttonOrder: BrandButtonOrder = .Secoundary
     
-    var buttonType: BrandButtonType = .actionButton
+    var buttonType: BrandButtonType = .successButton
 }

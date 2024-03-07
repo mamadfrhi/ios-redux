@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct BrandButtonIconCalculater : BrandButtonIconCalculable {
+struct ButtonIconCalculater : ButtonIconCalculable {
     func calculateBrandButtonIcon(iconName: String?, buttonOrder: BrandButtonOrder) -> UIImage? {
         
         guard let iconName = iconName else { return nil }

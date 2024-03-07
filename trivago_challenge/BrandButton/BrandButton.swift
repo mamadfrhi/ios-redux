@@ -17,6 +17,7 @@ class BrandButton: UIButton {
         self.store?.stateDidUpdate = { [weak self] in
             self?.updateAppearance(state: store.state)
         }
+        self.updateAppearance(state: store.state)
         addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
@@ -31,6 +32,7 @@ class BrandButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
+//            store.state.isHighlighted = self.isHighlighted
             store?.dispatch(action: .setHighlight(isHighlighted: isHighlighted))
         }
     }
@@ -41,7 +43,7 @@ class BrandButton: UIButton {
         self.isEnabled = state.isEnabled
         
         UIView.animate(withDuration: 0.25) {
-            self.setTitleColor(state.titleColor, for: .normal)
+            self.setTitleColor(state: state, isHighlighted: state.isHighlighted)
             self.backgroundColor = state.backgroundColor
         }
         
@@ -53,6 +55,14 @@ class BrandButton: UIButton {
         set(font: UIFont.systemFont(ofSize: 17, weight: .medium))
         
         sizeToFit()
+    }
+    
+    private func setTitleColor(state: ButtonStateable, isHighlighted: Bool) {
+        if isHighlighted {
+            self.setTitleColor(state.titleHighlightColor, for: .highlighted)
+        } else {
+            self.setTitleColor(state.titleColor, for: .normal)
+        }
     }
     
     private func setBorderColor(with state: ButtonStateable) {

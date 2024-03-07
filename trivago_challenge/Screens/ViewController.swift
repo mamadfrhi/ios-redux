@@ -24,15 +24,18 @@ class ViewController: UIViewController {
                 
                 
             case .setHighlight(let isHighlighted):
+                
+                newState.isHighlighted = isHighlighted
+                
                 switch state.buttonOrder {
                 case .Primary:
-                    let primaryButton = PrimaryState().render(isHighlighted: isHighlighted)
+                    let primaryButton = state.render(isHighlighted: isHighlighted, isEnabled: state.isEnabled)
                     newState.backgroundColor = primaryButton.backgroundColor
                     newState.titleColor = primaryButton.titleColor
                     newState.titleHighlightColor = primaryButton.titleHighlightColor
                     newState.borderColor = primaryButton.borderColor
                 case .Secoundary:
-                    let secondaryButton = SecondaryState().render(isHighlighted: isHighlighted)
+                    let secondaryButton = state.render(isHighlighted: isHighlighted, isEnabled: state.isEnabled)
                     newState.backgroundColor = secondaryButton.backgroundColor
                     newState.titleColor = secondaryButton.titleColor
                     newState.titleHighlightColor = secondaryButton.titleHighlightColor
@@ -43,18 +46,12 @@ class ViewController: UIViewController {
                 newState.title = title
                 
             case .setDisableStyle(let order):
-                
-                var state: ButtonStateable
                 switch order {
                 case .Primary:
-                    state = PrimaryState().render(isEnabled: false)
+                    newState = state.render(isHighlighted: state.isHighlighted, isEnabled: false)
                 case .Secoundary:
-                    state = SecondaryState().render(isEnabled: false)
+                    newState = state.render(isHighlighted: state.isHighlighted, isEnabled: false)
                 }
-                
-                newState.backgroundColor = state.backgroundColor
-                newState.titleColor = state.titleColor
-                newState.borderColor = state.borderColor
                 newState.isEnabled = false
                 
             case .setIcon(iconName: let iconName, iconPosition: let iconPosition, let iconCalculator):
@@ -66,6 +63,27 @@ class ViewController: UIViewController {
                     newState.trailingIcon = iconCalculator.calculateBrandButtonIcon(iconName: iconName,
                                                                                     buttonOrder: newState.buttonOrder)
                 }
+            case .setButtonType(let buttonType):
+                if buttonType.hashValue == newState.buttonType.hashValue { return state }
+                
+                switch buttonType {
+                case .actionButton:
+                    newState.buttonType = .actionButton
+                    let newButton = newState.render(isHighlighted: state.isHighlighted,
+                                                 isEnabled: state.isEnabled)
+                    newState.backgroundColor = newButton.backgroundColor
+                    newState.titleColor = newButton.titleColor
+                    newState.titleHighlightColor = newButton.titleHighlightColor
+                    newState.borderColor = newButton.borderColor
+                case .successButton:
+                    newState.buttonType = .successButton
+                    let newButton = state.render(isHighlighted: state.isHighlighted,
+                                                 isEnabled: state.isEnabled)
+                    newState.backgroundColor = newButton.backgroundColor
+                    newState.titleColor = newButton.titleColor
+                    newState.titleHighlightColor = newButton.titleHighlightColor
+                    newState.borderColor = newButton.borderColor
+                }
             }
             return newState
         }
@@ -73,12 +91,14 @@ class ViewController: UIViewController {
         buttonStore = ButtonStore(initialState: SecondaryState().render(), reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
         
-        let iconCalculator = BrandButtonIconCalculater()
-        brandButton.store?.dispatch(action: .setIcon(iconName: "square.fill",
-                                                     iconPosition: .right,
-                                                     brandButtonCalculator: iconCalculator))
-        // REMOVE ORDER
+        let iconCalculator = ButtonIconCalculater()
+//        brandButton.store?.dispatch(action: .setIcon(iconName: "square.fill",
+//                                                     iconPosition: .right,
+//                                                     brandButtonCalculator: iconCalculator))
+        
+        brandButton.store?.dispatch(action: .setButtonType(.actionButton))
         brandButton.store?.dispatch(action: .setDisableStyle(buttonOrder: brandButton.store!.state.buttonOrder))
+        brandButton.store?.dispatch(action: .setTitle("new title"))
         
         //TODO: if set disable then set order to primary, the style won't fit
         

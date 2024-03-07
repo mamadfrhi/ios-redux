@@ -10,7 +10,7 @@ import UIKit
 class PrimaryState: ButtonStateable {
     
     let primaryStyleCalculator = PrimaryButtonStyleCalculator()
-    let disableStyleCalculator = BrandPrimaryButtonDisableStyleCalculator()
+    let disableStyleCalculator = ButtonDisableStyleCalculator()
     
     func render(isHighlighted: Bool = false, isEnabled: Bool = true) -> ButtonStateable {
         if isEnabled {
@@ -24,9 +24,9 @@ class PrimaryState: ButtonStateable {
                                                                                            buttonOrder: self.buttonOrder,
                                                                                            isHighlighted: isHighlighted)
         } else {
-            self.backgroundColor = disableStyleCalculator.calculateDisableBackgroundColor()
-            self.titleColor = disableStyleCalculator.calculateDisableTitleColor()
-            self.borderColor = disableStyleCalculator.calculateDisableTitleColor()
+            self.backgroundColor = disableStyleCalculator.calculateDisableBackgroundColor(buttonOrder: self.buttonOrder)
+            self.titleColor = disableStyleCalculator.calculateDisableTitleColor(buttonOrder: self.buttonOrder)
+            self.borderColor = disableStyleCalculator.calculateDisableBorderColor(buttonOrder: self.buttonOrder)
         }
         return self
     }
