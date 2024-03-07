@@ -52,7 +52,7 @@ class ViewController: UIViewController {
                 newState.isEnabled = false
                 
             case .setIcon(let brandButtonIcon):
-
+                
                 if brandButtonIcon.iconPosition == .left {
                     newState.leadingIcon = brandButtonIcon.render(buttonOrder: state.buttonOrder)
                 } else {
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
                 case .actionButton:
                     newState.buttonType = .actionButton
                     let newButton = newState.render(isHighlighted: state.isHighlighted,
-                                                 isEnabled: state.isEnabled)
+                                                    isEnabled: state.isEnabled)
                     newState.backgroundColor = newButton.backgroundColor
                     newState.titleColor = newButton.titleColor
                     newState.titleHighlightColor = newButton.titleHighlightColor
