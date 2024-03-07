@@ -9,10 +9,10 @@ import UIKit
 
 struct ButtonDisableStyleCalculator: ButtonDisableStyleCalculable {
     
-    func calculateDisableBorderColor(buttonOrder: BrandButtonOrder) -> UIColor? {
+    func calculateDisableTitleColor(buttonOrder: BrandButtonOrder) -> UIColor {
         switch buttonOrder {
         case .primary:
-                return nil
+            return .white
         case .secoundary:
             return .gray
         }
@@ -27,14 +27,13 @@ struct ButtonDisableStyleCalculator: ButtonDisableStyleCalculable {
         }
     }
     
-    func calculateDisableTitleColor(buttonOrder: BrandButtonOrder) -> UIColor {
+    func calculateDisableBorderColor(buttonOrder: BrandButtonOrder) -> UIColor? {
         switch buttonOrder {
         case .primary:
-            return .white
+                return nil
         case .secoundary:
             return .gray
         }
     }
-    
     
 }

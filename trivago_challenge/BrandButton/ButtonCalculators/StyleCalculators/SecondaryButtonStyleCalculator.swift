@@ -24,6 +24,18 @@ struct SecondaryButtonStyleCalculator: ButtonStyleCalculable {
         return backgroundColor
     }
     
+    func calculateTitleColor(buttonType: BrandButtonType,
+                             buttonOrder: BrandButtonOrder,
+                             isHighlighted: Bool) -> UIColor {
+        
+        switch buttonType {
+        case .successButton:
+            return BrandPrimaryButtonColors.primarySuccessButtonBackgroundColor
+        case .actionButton:
+            return BrandPrimaryButtonColors.primaryActionButtonBackgroundColor
+        }
+    }
+    
     func calculateTitleHighlightColor(buttonType: BrandButtonType,
                                       buttonOrder: BrandButtonOrder,
                                       isHighlighted: Bool) -> UIColor? {
@@ -40,19 +52,6 @@ struct SecondaryButtonStyleCalculator: ButtonStyleCalculable {
         
         return titleHighlightColor
     }
-    
-    func calculateTitleColor(buttonType: BrandButtonType,
-                             buttonOrder: BrandButtonOrder,
-                             isHighlighted: Bool) -> UIColor {
-        
-        switch buttonType {
-        case .successButton:
-            return BrandPrimaryButtonColors.primarySuccessButtonBackgroundColor
-        case .actionButton:
-            return BrandPrimaryButtonColors.primaryActionButtonBackgroundColor
-        }
-    }
-    
     
     func calculateBorderColor(buttonType: BrandButtonType,
                               buttonOrder: BrandButtonOrder) -> UIColor? {

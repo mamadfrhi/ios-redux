@@ -7,12 +7,7 @@
 
 import UIKit
 
-
-
-//TODO: try to make it struct
-
-
-class PrimaryState: ButtonStateable {
+struct PrimaryState: ButtonStateable {
 
     var title = "Primary Pressed"
     

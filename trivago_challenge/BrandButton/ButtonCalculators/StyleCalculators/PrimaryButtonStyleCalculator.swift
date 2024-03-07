@@ -24,15 +24,15 @@ struct PrimaryButtonStyleCalculator: ButtonStyleCalculable {
         return backgroundColor
     }
     
-    func calculateTitleHighlightColor(buttonType: BrandButtonType,
-                                      buttonOrder: BrandButtonOrder,
-                                      isHighlighted: Bool) -> UIColor? {
-        return .white
-    }
-    
     func calculateTitleColor(buttonType: BrandButtonType,
                              buttonOrder: BrandButtonOrder,
                              isHighlighted: Bool) -> UIColor {
+        return .white
+    }
+    
+    func calculateTitleHighlightColor(buttonType: BrandButtonType,
+                                      buttonOrder: BrandButtonOrder,
+                                      isHighlighted: Bool) -> UIColor? {
         return .white
     }
     

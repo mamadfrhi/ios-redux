@@ -230,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				89D944762B9A17C000078C79 /* BrandButtonRenderable.swift */,
-				89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */,
 				89D9447A2B9A182100078C79 /* PrimaryButtonRenderer.swift */,
+				89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";

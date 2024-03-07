@@ -113,7 +113,7 @@ class ViewController: UIViewController {
         buttonStore = ButtonStore(initialState: initState, reducer: reducer)
         brandButton = BrandButton(store: buttonStore)
         
-        let icon = BrandButtonIcon(iconPosition: .right)
+        let icon = BrandButtonIcon(iconPosition: .trailing)
         brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: icon))
         
         brandButton.store?.dispatch(action: .setTitle("new title"))

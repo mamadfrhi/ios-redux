@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ButtonDisableStyleCalculable {
-    func calculateDisableBorderColor(buttonOrder: BrandButtonOrder) -> UIColor?
     func calculateDisableBackgroundColor(buttonOrder: BrandButtonOrder) -> UIColor?
     func calculateDisableTitleColor(buttonOrder: BrandButtonOrder) -> UIColor
+    func calculateDisableBorderColor(buttonOrder: BrandButtonOrder) -> UIColor?
 }

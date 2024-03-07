@@ -7,8 +7,7 @@
 
 import UIKit
 
-//TODO: try to make it struct
-class SecondaryState: ButtonStateable {
+struct SecondaryState: ButtonStateable {
     
     var title = "Secondary Button"
 

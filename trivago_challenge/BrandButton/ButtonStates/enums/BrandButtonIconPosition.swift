@@ -8,5 +8,5 @@
 import Foundation
 
 enum BrandButtonIconPosition {
-    case left, right
+    case leading, trailing
 }
