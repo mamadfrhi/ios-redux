@@ -14,6 +14,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButtonStore()
+        setupBrandButton()
+        layoutBrandButton()
+    }
+    
+    func setupButtonStore() {
+        
+        let initialState = SecondaryState()
         
         let primaryRenderer = PrimaryButtonRenderer()
         let secondaryRenderer = SecondaryButtonRenderer()
@@ -48,8 +56,6 @@ class ViewController: UIViewController {
             case .setDisableStyle(let isDisabled):
                 newState.isHighlighted = state.isHighlighted
                 newState.isEnabled = !isDisabled
-                
-                print(newState.isEnabled)
                 
                 switch state.buttonOrder {
                 case .primary:
@@ -107,26 +113,15 @@ class ViewController: UIViewController {
             return newState
         }
         
-        
-        let initState = primaryRenderer.render(buttonState: PrimaryState())
-//        let initState = secondaryRenderer.render(buttonState: SecondaryState())
-        buttonStore = ButtonStore(initialState: initState, reducer: reducer)
+        self.buttonStore = ButtonStore(initialState: initialState, reducer: reducer)
+    }
+    
+    private func setupBrandButton() {
         brandButton = BrandButton(store: buttonStore)
-        
-        let icon = BrandButtonIcon(iconPosition: .trailing)
-        brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: icon))
-        
-        brandButton.store?.dispatch(action: .setTitle("new title"))
-        brandButton.store?.dispatch(action: .setDisableStyle(isDisabled: true))
-        brandButton.store?.dispatch(action: .setButtonType(buttonType: .actionButton))
-        brandButton.store?.dispatch(action: .setDisableStyle(isDisabled: false))
-        brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
-        
-        //TODO: if set disable then set order to primary, the style won't fit
-        
         view.addSubview(brandButton)
-        
-        
+    }
+    
+    private func layoutBrandButton() {
         brandButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             brandButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
