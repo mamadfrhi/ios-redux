@@ -11,7 +11,8 @@ struct PrimaryState: ButtonStateable {
 
     var title = "Primary Button"
     
-    var backgroundColor: UIColor? = BrandPrimaryButtonColors.primarySuccessButtonHighlightColor
+    var backgroundColor: UIColor? =
+        BrandPrimaryButtonColors.primarySuccessButtonHighlightColor
     
     var borderColor: UIColor? = nil
     

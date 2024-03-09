@@ -8,6 +8,5 @@
 import Foundation
 
 enum BrandButtonOrder {
-    case primary
-    case secoundary
+    case primary, secoundary
 }

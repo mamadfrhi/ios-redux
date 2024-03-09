@@ -17,7 +17,8 @@ struct SecondaryState: ButtonStateable {
     
     var titleHighlightColor: UIColor? = nil
     
-    var titleColor: UIColor = BrandSecondaryButtonColors.secondarySuccessTitleColor
+    var titleColor: UIColor =
+        BrandSecondaryButtonColors.secondarySuccessTitleColor
     
     var iconName: String? = nil
     
