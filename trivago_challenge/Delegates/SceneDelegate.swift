@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let primaryButtonRenderer = PrimaryButtonRenderer()
         let secondaryButtonRenderer = SecondaryButtonRenderer()
-        let vm = ButtonViewModel(initialState: PrimaryState(),
+        let vm = ButtonViewModel(initialState: SecondaryState(),
                                  primaryRenderer: primaryButtonRenderer,
                                  secondaryRenderer: secondaryButtonRenderer)
         let vc = ViewController(viewModel: vm)

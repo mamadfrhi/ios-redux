@@ -10,7 +10,6 @@
 		897391CF2B9C792A00C399CE /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */; };
 		897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 897391D62B9C7B9A00C399CE /* SnapshotTesting */; };
 		89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */; };
-		89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944272B974BAA00078C79 /* AppDelegate.swift */; };
 		89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944292B974BAA00078C79 /* SceneDelegate.swift */; };
 		89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9442B2B974BAA00078C79 /* ViewController.swift */; };
 		89D944312B974BAB00078C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D944302B974BAB00078C79 /* Assets.xcassets */; };
@@ -39,7 +38,8 @@
 		89D944802B9A193100078C79 /* BrandButtonIconPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */; };
 		89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944812B9A195600078C79 /* BrandButtonType.swift */; };
 		89D944852B9A53B500078C79 /* PrimaryButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */; };
-		89DB4AD32B9C91B60071A81F /* BrandButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB4AD22B9C91B60071A81F /* BrandButtonVM.swift */; };
+		89D9C0D92B9CE7B8006C8026 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9C0D82B9CE7B8006C8026 /* AppDelegate.swift */; };
+		89DB4AD32B9C91B60071A81F /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB4AD22B9C91B60071A81F /* ButtonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,6 @@
 		897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
 		89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTests.swift; sourceTree = "<group>"; };
 		89D944242B974BAA00078C79 /* trivago_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivago_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		89D944272B974BAA00078C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D944292B974BAA00078C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		89D9442B2B974BAA00078C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		89D944302B974BAB00078C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +86,8 @@
 		89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconPosition.swift; sourceTree = "<group>"; };
 		89D944812B9A195600078C79 /* BrandButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonType.swift; sourceTree = "<group>"; };
 		89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonIconCalculater.swift; sourceTree = "<group>"; };
-		89DB4AD22B9C91B60071A81F /* BrandButtonVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonVM.swift; sourceTree = "<group>"; };
+		89D9C0D82B9CE7B8006C8026 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89DB4AD22B9C91B60071A81F /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 		89D944262B974BAA00078C79 /* trivago_challenge */ = {
 			isa = PBXGroup;
 			children = (
-				89D944402B974E9C00078C79 /* BrandButton */,
 				89D9443B2B974C3B00078C79 /* Delegates */,
+				89D944402B974E9C00078C79 /* BrandButton */,
 				89D9443D2B974DF500078C79 /* Screens */,
 				89D9443C2B974D9400078C79 /* Resources */,
 			);
@@ -150,7 +150,7 @@
 		89D9443B2B974C3B00078C79 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				89D944272B974BAA00078C79 /* AppDelegate.swift */,
+				89D9C0D82B9CE7B8006C8026 /* AppDelegate.swift */,
 				89D944292B974BAA00078C79 /* SceneDelegate.swift */,
 			);
 			path = Delegates;
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				89D944472B974F4600078C79 /* BrandButton.swift */,
-				89DB4AD22B9C91B60071A81F /* BrandButtonVM.swift */,
+				89DB4AD22B9C91B60071A81F /* ButtonViewModel.swift */,
 				89D9446A2B999F5600078C79 /* StateManager */,
 				89D944702B99BE4B00078C79 /* ButtonStates */,
 				89D9446B2B999F8000078C79 /* ButtonCalculators */,
@@ -395,7 +395,8 @@
 				89D944732B99E68900078C79 /* BrandButtonIcon.swift in Sources */,
 				89D944772B9A17C000078C79 /* BrandButtonRenderable.swift in Sources */,
 				89D944652B98B7C600078C79 /* SecondaryState.swift in Sources */,
-				89DB4AD32B9C91B60071A81F /* BrandButtonVM.swift in Sources */,
+				89DB4AD32B9C91B60071A81F /* ButtonViewModel.swift in Sources */,
+				89D9C0D92B9CE7B8006C8026 /* AppDelegate.swift in Sources */,
 				89D944792B9A17D600078C79 /* SecondaryButtonRenderer.swift in Sources */,
 				89D944632B98B7AE00078C79 /* PrimaryState.swift in Sources */,
 				89D9447B2B9A182100078C79 /* PrimaryButtonRenderer.swift in Sources */,
@@ -407,7 +408,6 @@
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
 				89D9443F2B974E8700078C79 /* ButtonState.swift in Sources */,
 				89D944752B99E71900078C79 /* BrandButtonIconProtocol.swift in Sources */,
-				89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */,
 				89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */,
 				89D944612B9874E400078C79 /* SecondaryButtonIconCalculater.swift in Sources */,
 				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,

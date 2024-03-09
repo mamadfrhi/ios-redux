@@ -11,12 +11,19 @@ import SnapshotTesting
 
 final class SecondaryButtonTests: XCTestCase {
     
-    var vc = ViewController(primaryRenderer: PrimaryButtonRenderer(),
-                            secondaryRenderer: SecondaryButtonRenderer())
+    var vm: ButtonViewModel!
+    var vc: ViewController!
     
     override func setUp() {
         super.setUp()
-        vc.brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
+        let primaryButtonRenderer = PrimaryButtonRenderer()
+        let secondaryButtonRenderer = SecondaryButtonRenderer()
+        self.vm = ButtonViewModel(initialState: SecondaryState(),
+                                 primaryRenderer: primaryButtonRenderer,
+                                 secondaryRenderer: secondaryButtonRenderer)
+        self.vc = ViewController(viewModel: vm!)
+        self.vc.viewDidLayoutSubviews()
+        self.vm.dispatch(.setHighlight(isHighlighted: false))
     }
     
     func testSecondarySuccess() {
@@ -24,37 +31,37 @@ final class SecondaryButtonTests: XCTestCase {
     }
     
     func testSecondarySuccessTitleUpdate() {
-        vc.brandButton.store?.dispatch(action: .setTitle("TEST"))
+        vm.dispatch(.setTitle("TEST"))
         assertSnapshot(of: vc, as: .image)
     }
     
     func testSecondarySuccessTrailingIcon() {
-        vc.brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: .init(iconPosition: .trailing)))
+        vm.dispatch(.setIcon(brandButtonIcon: .init(iconPosition: .trailing)))
         assertSnapshot(of: vc, as: .image)
     }
     
     func testSecondarySuccessLeadingIcon() {
-        vc.brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: .init(iconPosition: .leading)))
+        vm.dispatch(.setIcon(brandButtonIcon: .init(iconPosition: .leading)))
         assertSnapshot(of: vc, as: .image)
     }
     
     func testSecondarySuccessHighlighted() {
-        vc.brandButton.store?.dispatch(action: .setHighlight(isHighlighted: true))
+        vm.dispatch(.setHighlight(isHighlighted: true))
         assertSnapshot(of: vc, as: .image)
     }
     
     func testSecondarySuccessTypeUpdate() {
-        vc.brandButton.store?.dispatch(action: .setButtonType(buttonType: .actionButton))
+        vm.dispatch(.setButtonType(buttonType: .actionButton))
         assertSnapshot(of: vc, as: .image)
     }
     
     func testSecondarySuccessOrderUpdate() {
-        vc.brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
+        vm.dispatch(.setButtonOrder(buttonOrder: .secoundary))
         assertSnapshot(of: vc, as: .image)
     }
     
     func testSecondarySuccessDisableState() {
-        vc.brandButton.store?.dispatch(action: .setDisableStyle(isDisabled: true))
+        vm.dispatch(.setDisableStyle(isDisabled: true))
         assertSnapshot(of: vc, as: .image)
     }
 }

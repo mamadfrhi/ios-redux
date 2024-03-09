@@ -26,7 +26,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupBrandButton()
         bindViewModel()
-        brandButton.updateAppearance(state: PrimaryState())
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        brandButton.sendActions(for: .touchUpInside)
+        // to trig the button to update its view
     }
     
     private func setupBrandButton() {
@@ -57,10 +62,10 @@ class ViewController: UIViewController {
     
     @objc private func brandButtonTouchedDown() {
         viewModel.dispatch(.setHighlight(isHighlighted: true))
-        print("Brand Button has been tapped!")
     }
     
     @objc private func brandButtonTouchUpInside() {
         viewModel.dispatch(.setHighlight(isHighlighted: false))
+        print("Brand Button has been tapped!")
     }
 }
