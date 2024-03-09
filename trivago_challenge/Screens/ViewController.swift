@@ -9,13 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: Properties
     private var brandButton: BrandButton!
     private var buttonStore: ButtonStore!
     
     //TODO: Move to VM
-    private var primaryRenderer: BrandButtonRenderable!
+    private var primaryRenderer: BrandButtonRenderable
     private var secondaryRenderer: BrandButtonRenderable
     
+    //MARK: Inits
     init(primaryRenderer: BrandButtonRenderable,
          secondaryRenderer: BrandButtonRenderable) {
         self.primaryRenderer = primaryRenderer
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtonStore()

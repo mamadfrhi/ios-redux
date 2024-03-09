@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		897391CF2B9C792A00C399CE /* trivago_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897391CE2B9C792A00C399CE /* trivago_challengeTests.swift */; };
+		897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 897391D62B9C7B9A00C399CE /* SnapshotTesting */; };
 		89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944272B974BAA00078C79 /* AppDelegate.swift */; };
 		89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944292B974BAA00078C79 /* SceneDelegate.swift */; };
 		89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9442B2B974BAA00078C79 /* ViewController.swift */; };
@@ -38,7 +40,19 @@
 		89D944852B9A53B500078C79 /* PrimaryButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		897391D02B9C792A00C399CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D9441C2B974BAA00078C79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D944232B974BAA00078C79;
+			remoteInfo = trivago_challenge;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trivago_challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		897391CE2B9C792A00C399CE /* trivago_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trivago_challengeTests.swift; sourceTree = "<group>"; };
 		89D944242B974BAA00078C79 /* trivago_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivago_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D944272B974BAA00078C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D944292B974BAA00078C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +87,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		897391C92B9C792A00C399CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89D944212B974BAA00078C79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,10 +105,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		897391CD2B9C792A00C399CE /* trivago_challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				897391CE2B9C792A00C399CE /* trivago_challengeTests.swift */,
+			);
+			path = trivago_challengeTests;
+			sourceTree = "<group>";
+		};
 		89D9441B2B974BAA00078C79 = {
 			isa = PBXGroup;
 			children = (
 				89D944262B974BAA00078C79 /* trivago_challenge */,
+				897391CD2B9C792A00C399CE /* trivago_challengeTests */,
 				89D944252B974BAA00078C79 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				89D944242B974BAA00078C79 /* trivago_challenge.app */,
+				897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +275,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		897391CB2B9C792A00C399CE /* trivago_challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 897391D22B9C792A00C399CE /* Build configuration list for PBXNativeTarget "trivago_challengeTests" */;
+			buildPhases = (
+				897391C82B9C792A00C399CE /* Sources */,
+				897391C92B9C792A00C399CE /* Frameworks */,
+				897391CA2B9C792A00C399CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				897391D12B9C792A00C399CE /* PBXTargetDependency */,
+			);
+			name = trivago_challengeTests;
+			packageProductDependencies = (
+				897391D62B9C7B9A00C399CE /* SnapshotTesting */,
+			);
+			productName = trivago_challengeTests;
+			productReference = 897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		89D944232B974BAA00078C79 /* trivago_challenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D944382B974BAB00078C79 /* Build configuration list for PBXNativeTarget "trivago_challenge" */;
@@ -270,6 +323,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					897391CB2B9C792A00C399CE = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 89D944232B974BAA00078C79;
+					};
 					89D944232B974BAA00078C79 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -284,16 +341,27 @@
 				Base,
 			);
 			mainGroup = 89D9441B2B974BAA00078C79;
+			packageReferences = (
+				897391D52B9C7B9A00C399CE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 89D944252B974BAA00078C79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				89D944232B974BAA00078C79 /* trivago_challenge */,
+				897391CB2B9C792A00C399CE /* trivago_challengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		897391CA2B9C792A00C399CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89D944222B974BAA00078C79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +373,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		897391C82B9C792A00C399CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				897391CF2B9C792A00C399CE /* trivago_challengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89D944202B974BAA00078C79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,7 +418,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		897391D12B9C792A00C399CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D944232B974BAA00078C79 /* trivago_challenge */;
+			targetProxy = 897391D02B9C792A00C399CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		897391D32B9C792A00C399CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DD444593MH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.kabok.trivago-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trivago_challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/trivago_challenge";
+			};
+			name = Debug;
+		};
+		897391D42B9C792A00C399CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DD444593MH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.kabok.trivago-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trivago_challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/trivago_challenge";
+			};
+			name = Release;
+		};
 		89D944362B974BAB00078C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -514,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		897391D22B9C792A00C399CE /* Build configuration list for PBXNativeTarget "trivago_challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				897391D32B9C792A00C399CE /* Debug */,
+				897391D42B9C792A00C399CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		89D9441F2B974BAA00078C79 /* Build configuration list for PBXProject "trivago_challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -533,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		897391D52B9C7B9A00C399CE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		897391D62B9C7B9A00C399CE /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 897391D52B9C7B9A00C399CE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89D9441C2B974BAA00078C79 /* Project object */;
 }
