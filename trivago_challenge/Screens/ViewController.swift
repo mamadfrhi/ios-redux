@@ -12,6 +12,20 @@ class ViewController: UIViewController {
     private var brandButton: BrandButton!
     private var buttonStore: ButtonStore!
     
+    //TODO: Move to VM
+    private var primaryRenderer: BrandButtonRenderable!
+    private var secondaryRenderer: BrandButtonRenderable
+    
+    init(primaryRenderer: BrandButtonRenderable,
+         secondaryRenderer: BrandButtonRenderable) {
+        self.primaryRenderer = primaryRenderer
+        self.secondaryRenderer = secondaryRenderer
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtonStore()
@@ -20,11 +34,6 @@ class ViewController: UIViewController {
     }
     
     func setupButtonStore() {
-        
-        let initialState = SecondaryState()
-        
-        let primaryRenderer = PrimaryButtonRenderer()
-        let secondaryRenderer = SecondaryButtonRenderer()
         
         let reducer: ButtonReducer = { state, action in
             var newState = state
@@ -37,13 +46,13 @@ class ViewController: UIViewController {
                 
                 switch state.buttonOrder {
                 case .primary:
-                    let primaryButton = primaryRenderer.render(buttonState: newState)
+                    let primaryButton = self.primaryRenderer.render(buttonState: newState)
                     newState.backgroundColor = primaryButton.backgroundColor
                     newState.titleColor = primaryButton.titleColor
                     newState.titleHighlightColor = primaryButton.titleHighlightColor
                     newState.borderColor = primaryButton.borderColor
                 case .secoundary:
-                    let secondaryButton = secondaryRenderer.render(buttonState: newState)
+                    let secondaryButton = self.secondaryRenderer.render(buttonState: newState)
                     newState.backgroundColor = secondaryButton.backgroundColor
                     newState.titleColor = secondaryButton.titleColor
                     newState.titleHighlightColor = secondaryButton.titleHighlightColor
@@ -59,9 +68,9 @@ class ViewController: UIViewController {
                 
                 switch state.buttonOrder {
                 case .primary:
-                    newState = primaryRenderer.render(buttonState: newState)
+                    newState = self.primaryRenderer.render(buttonState: newState)
                 case .secoundary:
-                    newState = secondaryRenderer.render(buttonState: newState)
+                    newState = self.secondaryRenderer.render(buttonState: newState)
                 }
                 
             case .setIcon(let brandButtonIcon):
@@ -70,12 +79,13 @@ class ViewController: UIViewController {
                 
                 switch state.buttonOrder {
                 case .primary:
-                    newState = primaryRenderer.render(buttonState: newState)
+                    newState = self.primaryRenderer.render(buttonState: newState)
                 case .secoundary:
-                    newState = secondaryRenderer.render(buttonState: newState)
+                    newState = self.secondaryRenderer.render(buttonState: newState)
                 }
                 
             case .setButtonOrder(let buttonOrder):
+                
                 if buttonOrder == state.buttonOrder { break }
                 
                 newState.buttonType = state.buttonType
@@ -83,41 +93,46 @@ class ViewController: UIViewController {
                 switch buttonOrder {
                 case .primary:
                     newState.buttonOrder = .primary
-                    newState = primaryRenderer.render(buttonState: newState)
+                    newState = self.primaryRenderer.render(buttonState: newState)
                 case .secoundary:
                     newState.buttonOrder = .secoundary
-                    newState = secondaryRenderer.render(buttonState: newState)
+                    newState = self.secondaryRenderer.render(buttonState: newState)
                 }
                 
             case .setButtonType(buttonType: let buttonType):
+                
+                if state.buttonType == buttonType { break }
+                
                 switch buttonType {
                 case .actionButton:
                     newState.buttonType = .actionButton
                     switch newState.buttonOrder {
                     case .primary:
-                        newState = primaryRenderer.render(buttonState: newState)
+                        newState = self.primaryRenderer.render(buttonState: newState)
                     case .secoundary:
-                        newState = secondaryRenderer.render(buttonState: newState)
+                        newState = self.secondaryRenderer.render(buttonState: newState)
                     }
                     
                 case .successButton:
                     newState.buttonType = .successButton
                     switch newState.buttonOrder {
                     case .primary:
-                        newState = primaryRenderer.render(buttonState: newState)
+                        newState = self.primaryRenderer.render(buttonState: newState)
                     case .secoundary:
-                        newState = secondaryRenderer.render(buttonState: newState)
+                        newState = self.secondaryRenderer.render(buttonState: newState)
                     }
                 }
             }
             return newState
         }
         
+        let initialState = PrimaryState()
         self.buttonStore = ButtonStore(initialState: initialState, reducer: reducer)
     }
     
     private func setupBrandButton() {
         brandButton = BrandButton(store: buttonStore)
+        buttonStore.configureInitialButtonState()
         view.addSubview(brandButton)
     }
     
