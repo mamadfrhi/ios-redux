@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: Properties
-    private var brandButton: BrandButton!
+    var brandButton: BrandButton!
     private var buttonStore: ButtonStore!
     
     //TODO: Move to VM
@@ -98,9 +98,11 @@ class ViewController: UIViewController {
                 case .primary:
                     newState.buttonOrder = .primary
                     newState = self.primaryRenderer.render(buttonState: newState)
+                    newState.title = "Primary Button"
                 case .secoundary:
                     newState.buttonOrder = .secoundary
                     newState = self.secondaryRenderer.render(buttonState: newState)
+                    newState.title = "Secondary Button"
                 }
                 
             case .setButtonType(buttonType: let buttonType):

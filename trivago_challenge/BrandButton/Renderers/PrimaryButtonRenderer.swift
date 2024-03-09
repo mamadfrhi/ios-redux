@@ -9,6 +9,7 @@ import Foundation
 
 struct PrimaryButtonRenderer: BrandButtonRenderable {
     
+    //TODO: Injection here
     var styleCalculator:
     ButtonStyleCalculable = PrimaryButtonStyleCalculator()
     
@@ -44,8 +45,10 @@ struct PrimaryButtonRenderer: BrandButtonRenderable {
                 .calculateDisableBorderColor(buttonOrder: buttonState.buttonOrder)
         }
         
-        buttonState.iconImage = iconCalculator
-            .calculateIcon(iconName: buttonState.iconName)
+        if let iconName = buttonState.iconName {
+            buttonState.iconImage = iconCalculator
+                .calculateIcon(iconName: iconName)
+        }
         
         return buttonState
     }

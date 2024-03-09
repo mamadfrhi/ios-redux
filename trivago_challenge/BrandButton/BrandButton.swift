@@ -70,7 +70,10 @@ class BrandButton: UIButton {
     }
     
     private func set(insetValue: CGFloat) {
-        contentEdgeInsets = UIEdgeInsets(top: insetValue, left: insetValue, bottom: insetValue, right: insetValue)
+        contentEdgeInsets = UIEdgeInsets(top: insetValue,
+                                         left: insetValue,
+                                         bottom: insetValue,
+                                         right: insetValue)
     }
     
     private func set(font: UIFont) {
@@ -78,6 +81,8 @@ class BrandButton: UIButton {
     }
     
     private func set(iconPosition: BrandButtonIconPosition?, iconImage: UIImage?) {
+        
+        if iconImage == nil { return }
         
         if iconPosition == .leading {
             semanticContentAttribute = .forceLeftToRight

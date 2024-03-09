@@ -5,31 +5,52 @@
 //  Created by Mohammad Farrahi on 09.03.24.
 //
 
+import SnapshotTesting
 import XCTest
+@testable import trivago_challenge
 
-final class trivago_challengeTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class PrimaryButtonTests: XCTestCase {
+    
+    let vc = ViewController(primaryRenderer: PrimaryButtonRenderer(),
+                            secondaryRenderer: SecondaryButtonRenderer())
+    
+    func testPrimarySuccess() {
+        assertSnapshot(of: vc, as: .image)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testPrimarySuccessTitleUpdate() {
+        vc.brandButton.store?.dispatch(action: .setTitle("TEST"))
+        assertSnapshot(of: vc, as: .image)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testPrimarySuccessTrailingIcon() {
+        vc.brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: .init(iconPosition: .trailing)))
+        assertSnapshot(of: vc, as: .image)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testPrimarySuccessLeadingIcon() {
+        vc.brandButton.store?.dispatch(action: .setIcon(brandButtonIcon: .init(iconPosition: .leading)))
+        assertSnapshot(of: vc, as: .image)
     }
-
+    
+    func testPrimarySuccessHighlighted() {
+        vc.brandButton.store?.dispatch(action: .setHighlight(isHighlighted: true))
+        assertSnapshot(of: vc, as: .image)
+    }
+    
+    func testPrimarySuccessTypeUpdate() {
+        vc.brandButton.store?.dispatch(action: .setButtonType(buttonType: .actionButton))
+        assertSnapshot(of: vc, as: .image)
+    }
+    
+    func testPrimarySuccessOrderUpdate() {
+        vc.brandButton.store?.dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
+        assertSnapshot(of: vc, as: .image)
+    }
+    
+    func testPrimarySuccessDisableState() {
+        vc.brandButton.store?.dispatch(action: .setDisableStyle(isDisabled: true))
+        assertSnapshot(of: vc, as: .image)
+    }
 }
+

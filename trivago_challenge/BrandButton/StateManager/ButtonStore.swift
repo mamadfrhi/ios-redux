@@ -28,12 +28,13 @@ class ButtonStore {
     }
     
     func configureInitialButtonState() {
-        let icon = BrandButtonIcon(iconPosition: .trailing)
-        dispatch(action: .setIcon(brandButtonIcon: icon))
-        dispatch(action: .setButtonType(buttonType: .actionButton))
-        dispatch(action: .setDisableStyle(isDisabled: true))
-        dispatch(action: .setDisableStyle(isDisabled: false))
-        dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
-        dispatch(action: .setButtonType(buttonType: .successButton))
+        dispatch(action: .setHighlight(isHighlighted: false))
+//        let icon = BrandButtonIcon(iconPosition: .trailing)
+//        dispatch(action: .setIcon(brandButtonIcon: icon))
+//        dispatch(action: .setButtonType(buttonType: .actionButton))
+//        dispatch(action: .setDisableStyle(isDisabled: true))
+//        dispatch(action: .setDisableStyle(isDisabled: false))
+//        dispatch(action: .setButtonOrder(buttonOrder: .secoundary))
+//        dispatch(action: .setButtonType(buttonType: .successButton))
     }
 }

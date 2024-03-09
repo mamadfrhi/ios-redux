@@ -9,7 +9,7 @@ import UIKit
 
 struct PrimaryState: ButtonStateable {
 
-    var title = "Primary Pressed"
+    var title = "Primary Button"
     
     var backgroundColor: UIColor? = BrandPrimaryButtonColors.primarySuccessButtonHighlightColor
     

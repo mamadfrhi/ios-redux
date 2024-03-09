@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		897391CF2B9C792A00C399CE /* trivago_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897391CE2B9C792A00C399CE /* trivago_challengeTests.swift */; };
 		897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 897391D62B9C7B9A00C399CE /* SnapshotTesting */; };
+		89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */; };
 		89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944272B974BAA00078C79 /* AppDelegate.swift */; };
 		89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944292B974BAA00078C79 /* SceneDelegate.swift */; };
 		89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9442B2B974BAA00078C79 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trivago_challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		897391CE2B9C792A00C399CE /* trivago_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trivago_challengeTests.swift; sourceTree = "<group>"; };
+		89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTests.swift; sourceTree = "<group>"; };
 		89D944242B974BAA00078C79 /* trivago_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivago_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D944272B974BAA00078C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D944292B974BAA00078C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				897391CE2B9C792A00C399CE /* trivago_challengeTests.swift */,
+				89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */,
 			);
 			path = trivago_challengeTests;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */,
 				897391CF2B9C792A00C399CE /* trivago_challengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
