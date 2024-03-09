@@ -21,9 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let primaryButtonRenderer = PrimaryButtonRenderer()
         let secondaryButtonRenderer = SecondaryButtonRenderer()
-        
-        let vc = ViewController(primaryRenderer: primaryButtonRenderer,
-                                secondaryRenderer: secondaryButtonRenderer)
+        let vm = ButtonViewModel(initialState: PrimaryState(),
+                                 primaryRenderer: primaryButtonRenderer,
+                                 secondaryRenderer: secondaryButtonRenderer)
+        let vc = ViewController(viewModel: vm)
         
         navController.viewControllers.append(vc)
         window?.makeKeyAndVisible()

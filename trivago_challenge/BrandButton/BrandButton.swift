@@ -9,35 +9,15 @@ import UIKit
 
 class BrandButton: UIButton {
     
-    var store: ButtonStore?
-    
-    init(store: ButtonStore) {
+    init() {
         super.init(frame: .zero)
-        self.store = store
-        self.store?.stateDidUpdate = { [weak self] in
-            self?.updateAppearance(state: store.state)
-        }
-        self.updateAppearance(state: store.state)
-        addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func didTapButton() {
-        print("The button has been tapped!")
-        
-    }
-    
-    override var isHighlighted: Bool {
-        didSet {
-//            store.state.isHighlighted = self.isHighlighted
-            store?.dispatch(action: .setHighlight(isHighlighted: isHighlighted))
-        }
-    }
-    
-    private func updateAppearance(state: ButtonStateable) {
+    func updateAppearance(state: ButtonStateable) {
         setTitle(state.title, for: .normal)
         layer.cornerRadius = 5
         self.isEnabled = state.isEnabled
@@ -46,7 +26,6 @@ class BrandButton: UIButton {
             self.setTitleColor(state: state, isHighlighted: state.isHighlighted)
             self.backgroundColor = state.backgroundColor
         }
-        
         
         setBorderColor(with: state)
         set(iconPosition: state.iconPosition, iconImage: state.iconImage)
