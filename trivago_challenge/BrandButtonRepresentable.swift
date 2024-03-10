@@ -45,7 +45,10 @@ struct BrandButtonView: View {
             )
             .simultaneousGesture(
                 DragGesture(minimumDistance: 5)
-                    .onEnded { _ in
+                    .onEnded { dragValue in
+                        if abs(dragValue.translation.height) > 200 {
+                            return
+                        }
                         if viewModel.buttonStore!.state.buttonType == .successButton {
                             viewModel.dispatch(.setButtonType(buttonType: .actionButton))
                         } else {
@@ -54,7 +57,7 @@ struct BrandButtonView: View {
                     }
             )
             .simultaneousGesture(
-                DragGesture(minimumDistance: 50)
+                DragGesture(minimumDistance: 400)
                     .onEnded { _ in
                         if viewModel.buttonStore!.state.iconPosition == nil {
                             viewModel.dispatch(.setIcon(brandButtonIcon: BrandButtonIcon(iconPosition: .leading)))
