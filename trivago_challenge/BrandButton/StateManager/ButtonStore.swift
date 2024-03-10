@@ -5,10 +5,12 @@
 //  Created by Mohammad Farrahi on 05.03.24.
 //
 
+import Foundation
 
-class ButtonStore {
+
+class ButtonStore: ObservableObject {
     
-    private var state: ButtonStateable
+    @Published private(set) var state: ButtonStateable
     private let reducer: ButtonReducer
     
     init(initialState: ButtonStateable, reducer: @escaping ButtonReducer) {

@@ -6,34 +6,43 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    let primaryButtonRenderer = PrimaryButtonRenderer(styleCalculator: PrimaryButtonStyleCalculator(),
-                                                      disableStyleCalculator: ButtonDisableStyleCalculator(),
-                                                      iconCalculator: PrimaryButtonIconCalculater())
-    let secondaryButtonRenderer = SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
-                                                          disableStyleCalculator: ButtonDisableStyleCalculator(),
-                                                          iconCalculator: SecondaryButtonIconCalculater())
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let navController = UINavigationController()
         
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = navController
+        // Initialize your ViewModel with necessary dependencies
+        let viewModel = ButtonViewModel(initialState: PrimaryState(),
+                                        primaryRenderer:
+                                            PrimaryButtonRenderer(styleCalculator: PrimaryButtonStyleCalculator(),
+                                                                  disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                                  iconCalculator: PrimaryButtonIconCalculater()),
+                                        secondaryRenderer:
+                                            SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
+                                                                    disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                                    iconCalculator: SecondaryButtonIconCalculater()))
+        let useSwiftUI = true
         
-        //TODO: Develop DI container
-        //TODO: Develop Coordinator
-        
-        let vm = ButtonViewModel(initialState: PrimaryState(),
-                                 primaryRenderer: primaryButtonRenderer,
-                                 secondaryRenderer: secondaryButtonRenderer)
-        let vc = ViewController(viewModel: vm)
-        
-        navController.viewControllers.append(vc)
-        window?.makeKeyAndVisible()
+        if useSwiftUI {
+            // Setup with SwiftUI
+            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window?.windowScene = windowScene
+            window?.rootViewController = UIHostingController(rootView: BrandButtonView(viewModel: viewModel))
+            window?.makeKeyAndVisible()
+        } else {
+            // Setup with UIKit
+            let navController = UINavigationController()
+            let vc = ViewController(viewModel: viewModel) // Ensure ViewController accepts a viewModel
+            navController.viewControllers = [vc]
+            
+            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window?.windowScene = windowScene
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
+        }
     }
 }

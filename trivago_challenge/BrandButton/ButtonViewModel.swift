@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import SwiftUI
 
-class ButtonViewModel {
+class ButtonViewModel: ObservableObject {
     
-    private var buttonStore: ButtonStore?
+    @Published private(set) var buttonStore: ButtonStore?
     private let initialState: ButtonStateable
     private let primaryRenderer: BrandButtonRenderable
     private let secondaryRenderer: BrandButtonRenderable

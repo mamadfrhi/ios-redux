@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892607252B9DB964008EFE8D /* BrandButtonRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */; };
 		897391CF2B9C792A00C399CE /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */; };
 		897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 897391D62B9C7B9A00C399CE /* SnapshotTesting */; };
 		89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonRepresentable.swift; sourceTree = "<group>"; };
 		897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trivago_challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
 		89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTests.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				89D944402B974E9C00078C79 /* BrandButton */,
 				89D9443D2B974DF500078C79 /* Screens */,
 				89D9443C2B974D9400078C79 /* Resources */,
+				892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */,
 			);
 			path = trivago_challenge;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */,
 				89D944532B98493300078C79 /* ButtonStyleCalculable.swift in Sources */,
 				89D9445B2B986AE300078C79 /* ButtonDisableStyleCalculator.swift in Sources */,
+				892607252B9DB964008EFE8D /* BrandButtonRepresentable.swift in Sources */,
 				89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */,
 				89D944552B98495000078C79 /* PrimaryButtonStyleCalculator.swift in Sources */,
 				89D944422B974EC700078C79 /* ButtonAction.swift in Sources */,
