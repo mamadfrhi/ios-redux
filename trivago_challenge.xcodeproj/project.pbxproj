@@ -10,6 +10,7 @@
 		892607252B9DB964008EFE8D /* BrandButtonRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */; };
 		897391CF2B9C792A00C399CE /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */; };
 		897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 897391D62B9C7B9A00C399CE /* SnapshotTesting */; };
+		899542FD2B9E065E008E1DFC /* BrandButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899542FC2B9E065E008E1DFC /* BrandButtonView.swift */; };
 		89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */; };
 		89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944292B974BAA00078C79 /* SceneDelegate.swift */; };
 		89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9442B2B974BAA00078C79 /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 		892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonRepresentable.swift; sourceTree = "<group>"; };
 		897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trivago_challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
+		899542FC2B9E065E008E1DFC /* BrandButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonView.swift; sourceTree = "<group>"; };
 		89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTests.swift; sourceTree = "<group>"; };
 		89D944242B974BAA00078C79 /* trivago_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivago_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D944292B974BAA00078C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,15 @@
 			path = trivago_challengeTests;
 			sourceTree = "<group>";
 		};
+		899542FB2B9E0641008E1DFC /* BrandButtonSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */,
+				899542FC2B9E065E008E1DFC /* BrandButtonView.swift */,
+			);
+			path = BrandButtonSwiftUI;
+			sourceTree = "<group>";
+		};
 		89D9441B2B974BAA00078C79 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +164,7 @@
 				89D944402B974E9C00078C79 /* BrandButton */,
 				89D9443D2B974DF500078C79 /* Screens */,
 				89D9443C2B974D9400078C79 /* Resources */,
-				892607242B9DB964008EFE8D /* BrandButtonRepresentable.swift */,
+				899542FB2B9E0641008E1DFC /* BrandButtonSwiftUI */,
 			);
 			path = trivago_challenge;
 			sourceTree = "<group>";
@@ -426,6 +437,7 @@
 				89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */,
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
 				89D9443F2B974E8700078C79 /* ButtonStateable.swift in Sources */,
+				899542FD2B9E065E008E1DFC /* BrandButtonView.swift in Sources */,
 				89D944752B99E71900078C79 /* BrandButtonIconable.swift in Sources */,
 				89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */,
 				89D944612B9874E400078C79 /* SecondaryButtonIconCalculater.swift in Sources */,
