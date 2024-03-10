@@ -12,6 +12,29 @@ class ViewController: UIViewController {
     private var brandButton: BrandButton!
     private var viewModel: ButtonViewModel
     
+    private var showcaseTimer: Timer?
+    private var currentActionIndex = 0
+    private let actionSequence: [ButtonAction] = [
+        .setHighlight(isHighlighted: true),
+        .setHighlight(isHighlighted: false),
+        .setTitle("Showcase Title"),
+        .setDisableStyle(isDisabled: true),
+        .setDisableStyle(isDisabled: false),
+        .setButtonType(buttonType: .actionButton),
+        .setButtonType(buttonType: .successButton),
+        .setIcon(brandButtonIcon: BrandButtonIcon(iconName: "square.fill",
+                                                  iconPosition: .leading)),
+        .setButtonOrder(buttonOrder: .secoundary),
+        .setButtonType(buttonType: .actionButton),
+        .setHighlight(isHighlighted: true),
+        .setHighlight(isHighlighted: false),
+        .setDisableStyle(isDisabled: true),
+        .setDisableStyle(isDisabled: false),
+        .setIcon(brandButtonIcon: BrandButtonIcon(iconName: "square.fill",
+                                                  iconPosition: .trailing)),
+        
+    ]
+    
     init(viewModel: ButtonViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -31,7 +54,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         brandButton.sendActions(for: .touchUpInside)
-        // to trig the button to update its view
+        // trig the button to appear on the VC
     }
     
     private func setupBrandButton() {
@@ -52,6 +75,9 @@ class ViewController: UIViewController {
         brandButton.addTarget(self,
                               action: #selector(brandButtonTouchUpInside),
                               for: .touchUpInside)
+        brandButton.addTarget(self,
+                              action: #selector(brandButtonTouchDragOutside),
+                              for: .touchDragOutside)
     }
     
     private func bindViewModel() {
@@ -67,5 +93,32 @@ class ViewController: UIViewController {
     @objc private func brandButtonTouchUpInside() {
         viewModel.dispatch(.setHighlight(isHighlighted: false))
         print("Brand Button has been tapped!")
+    }
+    
+    @objc private func brandButtonTouchDragOutside() {
+        viewModel.dispatch(.setHighlight(isHighlighted: false))
+        startShowcase()
+    }
+}
+
+
+extension ViewController {
+    private func startShowcase() {
+        if showcaseTimer != nil { return }
+        showcaseTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(showcaseNextAction), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func showcaseNextAction() {
+        guard currentActionIndex < actionSequence.count else {
+            showcaseTimer?.invalidate()
+            showcaseTimer = nil
+            currentActionIndex = 0
+            print("Showcase completed.")
+            return
+        }
+        
+        let action = actionSequence[currentActionIndex]
+        viewModel.dispatch(action)
+        currentActionIndex += 1
     }
 }

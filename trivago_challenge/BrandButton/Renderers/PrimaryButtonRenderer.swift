@@ -8,16 +8,12 @@
 import Foundation
 
 struct PrimaryButtonRenderer: BrandButtonRenderable {
+
+    var styleCalculator: ButtonStyleCalculable
     
-    //TODO: Injection here
-    var styleCalculator:
-    ButtonStyleCalculable = PrimaryButtonStyleCalculator()
+    var disableStyleCalculator: ButtonDisableStyleCalculable
     
-    var disableStyleCalculator:
-    ButtonDisableStyleCalculable = ButtonDisableStyleCalculator()
-    
-    var iconCalculator:
-    ButtonIconCalculable = PrimaryButtonIconCalculater()
+    var iconCalculator: ButtonIconCalculable
     
     func render(buttonState: ButtonStateable) -> ButtonStateable {
         

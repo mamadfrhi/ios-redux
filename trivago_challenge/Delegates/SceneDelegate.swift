@@ -19,9 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = navController
         
-        let primaryButtonRenderer = PrimaryButtonRenderer()
-        let secondaryButtonRenderer = SecondaryButtonRenderer()
-        let vm = ButtonViewModel(initialState: SecondaryState(),
+        //TODO: Develop DI container
+        //TODO: Develop Coordinator
+        let primaryButtonRenderer = PrimaryButtonRenderer(styleCalculator: PrimaryButtonStyleCalculator(),
+                                                          disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                          iconCalculator: PrimaryButtonIconCalculater())
+        let secondaryButtonRenderer = SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
+                                                              disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                              iconCalculator: SecondaryButtonIconCalculater())
+        let vm = ButtonViewModel(initialState: PrimaryState(),
                                  primaryRenderer: primaryButtonRenderer,
                                  secondaryRenderer: secondaryButtonRenderer)
         let vc = ViewController(viewModel: vm)

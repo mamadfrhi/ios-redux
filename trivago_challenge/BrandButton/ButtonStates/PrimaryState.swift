@@ -16,17 +16,17 @@ struct PrimaryState: ButtonStateable {
     
     var borderColor: UIColor? = nil
     
-    var titleHighlightColor: UIColor? = BrandPrimaryButtonColors.primarySuccessButtonHighlightColor
-    
     var titleColor: UIColor = .white
+    
+    var titleHighlightColor: UIColor? = BrandPrimaryButtonColors.primarySuccessButtonHighlightColor
     
     var iconName: String? = nil
     
     var iconImage: UIImage?  = nil
     
-    var iconPosition: BrandButtonIconPosition? = nil
-    
     var iconColor: UIColor? = nil
+    
+    var iconPosition: BrandButtonIconPosition? = nil
     
     var isEnabled = true
     

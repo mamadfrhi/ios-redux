@@ -9,15 +9,11 @@ import Foundation
 
 struct SecondaryButtonRenderer: BrandButtonRenderable {
     
-    //TODO: Injection here
-    var styleCalculator:
-    ButtonStyleCalculable = SecondaryButtonStyleCalculator()
+    var styleCalculator: ButtonStyleCalculable
     
-    var disableStyleCalculator:
-    ButtonDisableStyleCalculable = ButtonDisableStyleCalculator()
+    var disableStyleCalculator: ButtonDisableStyleCalculable
     
-    var iconCalculator:
-    ButtonIconCalculable = SecondaryButtonIconCalculater()
+    var iconCalculator: ButtonIconCalculable
     
     func render(buttonState: ButtonStateable) -> ButtonStateable {
         

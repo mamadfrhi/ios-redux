@@ -8,8 +8,6 @@
 
 class ButtonStore {
     
-    //TODO: Add renderers here
-    
     private var state: ButtonStateable
     private let reducer: ButtonReducer
     

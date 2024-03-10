@@ -9,9 +9,7 @@ import UIKit
 
 class BrandButton: UIButton {
     
-    init() {
-        super.init(frame: .zero)
-    }
+    init() { super.init(frame: .zero) }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -27,7 +25,7 @@ class BrandButton: UIButton {
             self.backgroundColor = state.backgroundColor
         }
         
-        setBorderColor(with: state)
+        setBorderColor(for: state)
         set(iconPosition: state.iconPosition, iconImage: state.iconImage)
         set(insetValue: 10)
         set(font: UIFont.systemFont(ofSize: 17, weight: .medium))
@@ -43,7 +41,7 @@ class BrandButton: UIButton {
         }
     }
     
-    private func setBorderColor(with state: ButtonStateable) {
+    private func setBorderColor(for state: ButtonStateable) {
         layer.borderWidth = state.buttonOrder == .secoundary ? 1 : 0
         layer.borderColor = state.borderColor?.cgColor
     }

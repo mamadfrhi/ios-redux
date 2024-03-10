@@ -15,16 +15,16 @@ struct SecondaryState: ButtonStateable {
     
     var borderColor: UIColor? = nil
     
-    var titleHighlightColor: UIColor? = nil
-    
     var titleColor: UIColor =
         BrandSecondaryButtonColors.secondarySuccessTitleColor
     
+    var titleHighlightColor: UIColor? = nil
+    
     var iconName: String? = nil
     
-    var iconColor: UIColor? = nil
-    
     var iconImage: UIImage?  = nil
+    
+    var iconColor: UIColor? = nil
     
     var iconPosition: BrandButtonIconPosition? = nil
     
