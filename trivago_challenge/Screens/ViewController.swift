@@ -86,6 +86,7 @@ extension ViewController {
         view.addSubview(statusLabel)
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.textAlignment = .center
+        statusLabel.numberOfLines = 2
         
         NSLayoutConstraint.activate([
             statusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -94,7 +95,7 @@ extension ViewController {
             statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        statusLabel.text = "Touch and drag outside to see the magic!"
+        statusLabel.text = "Touch and drag outside \nand wait to see the magic!"
     }
     
     private func bindViewModel() {
