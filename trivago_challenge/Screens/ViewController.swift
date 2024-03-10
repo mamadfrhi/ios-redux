@@ -55,48 +55,7 @@ class ViewController: UIViewController {
     }
 }
 
-//MARK: BrandButton Funcs
-extension ViewController {
-    @objc private func brandButtonTouchedDown() {
-        viewModel.dispatch(.setHighlight(isHighlighted: true))
-    }
-    
-    @objc private func brandButtonTouchUpInside() {
-        viewModel.dispatch(.setHighlight(isHighlighted: false))
-        print("Brand Button has been tapped!")
-    }
-    
-    @objc private func brandButtonTouchDragOutside() {
-        viewModel.dispatch(.setHighlight(isHighlighted: false))
-        startShowcase()
-    }
-}
-
-//MARK: Showcase Funcs
-extension ViewController {
-    private func startShowcase() {
-        if showcaseTimer != nil { return }
-        showcaseTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(showcaseNextAction), userInfo: nil, repeats: true)
-    }
-    
-    @objc private func showcaseNextAction() {
-        guard currentActionIndex < actionSequence.count else {
-            showcaseTimer?.invalidate()
-            showcaseTimer = nil
-            currentActionIndex = 0
-            statusLabel.text = "Showcase completed."
-            return
-        }
-        
-        let action = actionSequence[currentActionIndex]
-        viewModel.dispatch(action)
-        statusLabel.text = action.displayName
-        currentActionIndex += 1
-    }
-}
-
-
-//MARK: View Setups
+//MARK: - View Setups
 extension ViewController {
     
     private func setupBrandButton() {
@@ -142,5 +101,45 @@ extension ViewController {
         viewModel.stateDidChange = { [weak self] state in
             self?.brandButton.updateAppearance(state: state)
         }
+    }
+}
+
+//MARK: - BrandButton Funcs
+extension ViewController {
+    @objc private func brandButtonTouchedDown() {
+        viewModel.dispatch(.setHighlight(isHighlighted: true))
+    }
+    
+    @objc private func brandButtonTouchUpInside() {
+        viewModel.dispatch(.setHighlight(isHighlighted: false))
+        print("Brand Button has been tapped!")
+    }
+    
+    @objc private func brandButtonTouchDragOutside() {
+        viewModel.dispatch(.setHighlight(isHighlighted: false))
+        startShowcase()
+    }
+}
+
+//MARK: - Showcase Funcs
+extension ViewController {
+    private func startShowcase() {
+        if showcaseTimer != nil { return }
+        showcaseTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(showcaseNextAction), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func showcaseNextAction() {
+        guard currentActionIndex < actionSequence.count else {
+            showcaseTimer?.invalidate()
+            showcaseTimer = nil
+            currentActionIndex = 0
+            statusLabel.text = "Showcase completed."
+            return
+        }
+        
+        let action = actionSequence[currentActionIndex]
+        viewModel.dispatch(action)
+        statusLabel.text = action.displayName
+        currentActionIndex += 1
     }
 }
