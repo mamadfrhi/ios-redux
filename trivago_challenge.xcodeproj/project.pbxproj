@@ -109,11 +109,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		897391CD2B9C792A00C399CE /* trivago_challengeTests */ = {
+		892607232B9DB6CC008EFE8D /* SnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
 				897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */,
 				89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		897391CD2B9C792A00C399CE /* trivago_challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				892607232B9DB6CC008EFE8D /* SnapshotTests */,
 			);
 			path = trivago_challengeTests;
 			sourceTree = "<group>";

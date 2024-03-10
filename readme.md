@@ -8,6 +8,9 @@ The BrandButton app is a showcase project demonstrating a highly dynamic UI butt
 ![Architecture](../uml.png)
 The application utilizes a Redux-like state management system to handle the button state dynamically. It abstracts concrete implementations into protocols, allowing flexibility and making the codebase ready for future extensions with minimal changes.
 
+## SOLID Foundations: Prioritizing Architecture for Adaptive UI"
+I've prioritized developing an extendable architecture based on SOLID principles, focusing on system robustness and flexibility. This approach means the current UI doesn't exactly match the Figma design. However, because of the strong architecture, adjusting the design later is straightforward, involving minor code adjustments.
+
 ## Features
 
 - Dynamic UI update for a custom `BrandButton` component.
