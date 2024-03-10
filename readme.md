@@ -5,7 +5,7 @@
 The BrandButton app is a showcase project demonstrating a highly dynamic UI button component with an implementation of the Redux pattern for state management. This application is designed following SOLID principles, particularly focusing on the Open/Closed principle (O) and the Dependency Inversion Principle (D) to ensure extendability and maintainability.
 
 ## Architecture
-![Architecture](../uml.png)
+![Architecture](uml.png)
 The application utilizes a Redux-like state management system to handle the button state dynamically. It abstracts concrete implementations into protocols, allowing flexibility and making the codebase ready for future extensions with minimal changes.
 
 ## SOLID Foundations: Prioritizing Architecture for Adaptive UI"
@@ -16,7 +16,7 @@ I've prioritized developing an extendable architecture based on SOLID principles
 - Dynamic UI update for a custom `BrandButton` component.
 - State managed by Redux-inspired `ButtonStore`.
 - Actions dispatched based on user interaction, reflecting immediate UI changes.
-- Extensible action enumeration (`ButtonAction`) facilitating new features addition.
+- Extensible action enumeration `ButtonAction` facilitating new features addition.
 - Decoupled View Controller logic via a `ButtonViewModel`.
 
 ## Usage
@@ -45,7 +45,7 @@ class ButtonViewModel {
 ```
 
 ## Snapshot Testing
-The project includes snapshot tests to validate UI elements. These tests capture screenshots of UI states and compare them to reference images, helping to identify any visual changes. To execute the snapshot tests, use the keyboard shortcut `Command + U`in Xcode. This will run all unit and snapshot tests in the project.
+The project includes snapshot tests to validate UI elements. These tests capture screenshots of UI states and compare them to reference images, helping to identify any visual changes. To execute the snapshot tests, use the keyboard shortcut `Command + U` in Xcode. This will run all unit and snapshot tests in the project.
 
 ## Extendability
 Adding new functionalities can be done by appending new cases to the ButtonAction enum. The compiler's type safety will prompt the necessary implementations wherever the action is processed.
@@ -60,7 +60,7 @@ let useSwiftUI = true
 ```
 
 
-### Available Gestures
+### Available Gestures in SwiftUI Implementation
 Within the `BrandButtonView`, several gestures are configured to demonstrate the interactive and dynamic capabilities of the BrandButton:
 
 **Tap Gesture:** A simple tap on the button toggles the highlight state, showcasing the button's response to basic user interaction.
@@ -69,4 +69,4 @@ Within the `BrandButtonView`, several gestures are configured to demonstrate the
 
 **Drag Gesture (Minimum Distance: 5):** Changes the button's type (actionButton or successButton) based on the drag action's completion. This demonstrates the dynamic update of the button's appearance based on user interaction.
 
-**Drag Gesture (Minimum Distance: 50):** Toggles the button's icon position between leading and trailing, or introduces an icon if none is set. This gesture showcases the ability to dynamically modify the button's icon configuration based on user actions.
+**Drag Gesture (Minimum Distance: 400):** Toggles the button's icon position between leading and trailing, or introduces an icon if none is set. This gesture showcases the ability to dynamically modify the button's icon configuration based on user actions.
