@@ -10,6 +10,12 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    let primaryButtonRenderer = PrimaryButtonRenderer(styleCalculator: PrimaryButtonStyleCalculator(),
+                                                      disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                      iconCalculator: PrimaryButtonIconCalculater())
+    let secondaryButtonRenderer = SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
+                                                          disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                          iconCalculator: SecondaryButtonIconCalculater())
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -21,12 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //TODO: Develop DI container
         //TODO: Develop Coordinator
-        let primaryButtonRenderer = PrimaryButtonRenderer(styleCalculator: PrimaryButtonStyleCalculator(),
-                                                          disableStyleCalculator: ButtonDisableStyleCalculator(),
-                                                          iconCalculator: PrimaryButtonIconCalculater())
-        let secondaryButtonRenderer = SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
-                                                              disableStyleCalculator: ButtonDisableStyleCalculator(),
-                                                              iconCalculator: SecondaryButtonIconCalculater())
+        
         let vm = ButtonViewModel(initialState: PrimaryState(),
                                  primaryRenderer: primaryButtonRenderer,
                                  secondaryRenderer: secondaryButtonRenderer)
