@@ -11,6 +11,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    let useSwiftUI = true
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -25,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                             SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
                                                                     disableStyleCalculator: ButtonDisableStyleCalculator(),
                                                                     iconCalculator: SecondaryButtonIconCalculater()))
-        let useSwiftUI = true
+        
         
         if useSwiftUI {
             // Setup with SwiftUI
@@ -34,9 +35,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = UIHostingController(rootView: BrandButtonView(viewModel: viewModel))
             window?.makeKeyAndVisible()
         } else {
-            // Setup with UIKit
             let navController = UINavigationController()
-            let vc = ViewController(viewModel: viewModel) // Ensure ViewController accepts a viewModel
+            let vc = ViewController(viewModel: viewModel)
             navController.viewControllers = [vc]
             
             window = UIWindow(frame: windowScene.coordinateSpace.bounds)

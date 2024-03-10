@@ -49,3 +49,24 @@ The project includes snapshot tests to validate UI elements. These tests capture
 
 ## Extendability
 Adding new functionalities can be done by appending new cases to the ButtonAction enum. The compiler's type safety will prompt the necessary implementations wherever the action is processed.
+
+## Gestures and SwiftUI Compatibility
+The BrandButton component is fully compatible with SwiftUI, enabling dynamic UI interactions through gestures. The integration with SwiftUI is facilitated through the `BrandButtonRepresentable` struct, which bridges the UIKit-based BrandButton with SwiftUI's declarative interface. This setup allows the button to react to state changes and user interactions in a SwiftUI environment.
+
+To view the `BrandButton` component within a SwiftUI context, simply modify the `useSwiftUI` flag in the `SceneDelegate` to `true`. This flag controls whether the UIKit-based view controller or the SwiftUI view is presented as the root view controller.
+
+```
+let useSwiftUI = true
+```
+
+
+### Available Gestures
+Within the `BrandButtonView`, several gestures are configured to demonstrate the interactive and dynamic capabilities of the BrandButton:
+
+**Tap Gesture:** A simple tap on the button toggles the highlight state, showcasing the button's response to basic user interaction.
+
+**Drag Gesture (Minimum Distance: 0):** Initiates the button's highlight state to indicate a press-and-hold action.
+
+**Drag Gesture (Minimum Distance: 5):** Changes the button's type (actionButton or successButton) based on the drag action's completion. This demonstrates the dynamic update of the button's appearance based on user interaction.
+
+**Drag Gesture (Minimum Distance: 50):** Toggles the button's icon position between leading and trailing, or introduces an icon if none is set. This gesture showcases the ability to dynamically modify the button's icon configuration based on user actions.
