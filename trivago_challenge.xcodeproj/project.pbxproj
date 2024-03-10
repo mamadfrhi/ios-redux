@@ -7,26 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944272B974BAA00078C79 /* AppDelegate.swift */; };
+		897391CF2B9C792A00C399CE /* PrimaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */; };
+		897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 897391D62B9C7B9A00C399CE /* SnapshotTesting */; };
+		89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */; };
 		89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944292B974BAA00078C79 /* SceneDelegate.swift */; };
 		89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9442B2B974BAA00078C79 /* ViewController.swift */; };
-		89D9442F2B974BAA00078C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D9442D2B974BAA00078C79 /* Main.storyboard */; };
 		89D944312B974BAB00078C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D944302B974BAB00078C79 /* Assets.xcassets */; };
-		89D944342B974BAB00078C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D944322B974BAB00078C79 /* LaunchScreen.storyboard */; };
+		89D9443F2B974E8700078C79 /* ButtonStateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9443E2B974E8700078C79 /* ButtonStateable.swift */; };
+		89D944422B974EC700078C79 /* ButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944412B974EC700078C79 /* ButtonAction.swift */; };
+		89D944442B974EDF00078C79 /* ButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944432B974EDF00078C79 /* ButtonReducer.swift */; };
+		89D944462B974F1200078C79 /* ButtonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944452B974F1200078C79 /* ButtonStore.swift */; };
+		89D944482B974F4600078C79 /* BrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944472B974F4600078C79 /* BrandButton.swift */; };
+		89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9444B2B97921700078C79 /* BrandPrimaryButtonColors.swift */; };
+		89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */; };
+		89D944532B98493300078C79 /* ButtonStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944522B98493200078C79 /* ButtonStyleCalculable.swift */; };
+		89D944552B98495000078C79 /* PrimaryButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944542B98495000078C79 /* PrimaryButtonStyleCalculator.swift */; };
+		89D9445B2B986AE300078C79 /* ButtonDisableStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445A2B986AE300078C79 /* ButtonDisableStyleCalculator.swift */; };
+		89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445C2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift */; };
+		89D9445F2B98749C00078C79 /* ButtonIconCalculable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */; };
+		89D944612B9874E400078C79 /* SecondaryButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */; };
+		89D944632B98B7AE00078C79 /* PrimaryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944622B98B7AE00078C79 /* PrimaryState.swift */; };
+		89D944652B98B7C600078C79 /* SecondaryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944642B98B7C600078C79 /* SecondaryState.swift */; };
+		89D9446F2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */; };
+		89D944732B99E68900078C79 /* BrandButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944722B99E68900078C79 /* BrandButtonIcon.swift */; };
+		89D944752B99E71900078C79 /* BrandButtonIconable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944742B99E71900078C79 /* BrandButtonIconable.swift */; };
+		89D944772B9A17C000078C79 /* BrandButtonRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944762B9A17C000078C79 /* BrandButtonRenderable.swift */; };
+		89D944792B9A17D600078C79 /* SecondaryButtonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */; };
+		89D9447B2B9A182100078C79 /* PrimaryButtonRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447A2B9A182100078C79 /* PrimaryButtonRenderer.swift */; };
+		89D9447E2B9A191E00078C79 /* BrandButtonOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */; };
+		89D944802B9A193100078C79 /* BrandButtonIconPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */; };
+		89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944812B9A195600078C79 /* BrandButtonType.swift */; };
+		89D944852B9A53B500078C79 /* PrimaryButtonIconCalculater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */; };
+		89D9C0D92B9CE7B8006C8026 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9C0D82B9CE7B8006C8026 /* AppDelegate.swift */; };
+		89DB4AD32B9C91B60071A81F /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB4AD22B9C91B60071A81F /* ButtonViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		897391D02B9C792A00C399CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89D9441C2B974BAA00078C79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D944232B974BAA00078C79;
+			remoteInfo = trivago_challenge;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trivago_challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTests.swift; sourceTree = "<group>"; };
+		89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTests.swift; sourceTree = "<group>"; };
 		89D944242B974BAA00078C79 /* trivago_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivago_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		89D944272B974BAA00078C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D944292B974BAA00078C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		89D9442B2B974BAA00078C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		89D9442E2B974BAA00078C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89D944302B974BAB00078C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		89D944332B974BAB00078C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D944352B974BAB00078C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D9443E2B974E8700078C79 /* ButtonStateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStateable.swift; sourceTree = "<group>"; };
+		89D944412B974EC700078C79 /* ButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAction.swift; sourceTree = "<group>"; };
+		89D944432B974EDF00078C79 /* ButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReducer.swift; sourceTree = "<group>"; };
+		89D944452B974F1200078C79 /* ButtonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStore.swift; sourceTree = "<group>"; };
+		89D944472B974F4600078C79 /* BrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButton.swift; sourceTree = "<group>"; };
+		89D9444B2B97921700078C79 /* BrandPrimaryButtonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPrimaryButtonColors.swift; sourceTree = "<group>"; };
+		89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSecondaryButtonColors.swift; sourceTree = "<group>"; };
+		89D944522B98493200078C79 /* ButtonStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleCalculable.swift; sourceTree = "<group>"; };
+		89D944542B98495000078C79 /* PrimaryButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyleCalculator.swift; sourceTree = "<group>"; };
+		89D9445A2B986AE300078C79 /* ButtonDisableStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDisableStyleCalculator.swift; sourceTree = "<group>"; };
+		89D9445C2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDisableStyleCalculable.swift; sourceTree = "<group>"; };
+		89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconCalculable.swift; sourceTree = "<group>"; };
+		89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonIconCalculater.swift; sourceTree = "<group>"; };
+		89D944622B98B7AE00078C79 /* PrimaryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryState.swift; sourceTree = "<group>"; };
+		89D944642B98B7C600078C79 /* SecondaryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryState.swift; sourceTree = "<group>"; };
+		89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyleCalculator.swift; sourceTree = "<group>"; };
+		89D944722B99E68900078C79 /* BrandButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIcon.swift; sourceTree = "<group>"; };
+		89D944742B99E71900078C79 /* BrandButtonIconable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconable.swift; sourceTree = "<group>"; };
+		89D944762B9A17C000078C79 /* BrandButtonRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonRenderable.swift; sourceTree = "<group>"; };
+		89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonRenderer.swift; sourceTree = "<group>"; };
+		89D9447A2B9A182100078C79 /* PrimaryButtonRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonRenderer.swift; sourceTree = "<group>"; };
+		89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonOrder.swift; sourceTree = "<group>"; };
+		89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonIconPosition.swift; sourceTree = "<group>"; };
+		89D944812B9A195600078C79 /* BrandButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonType.swift; sourceTree = "<group>"; };
+		89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonIconCalculater.swift; sourceTree = "<group>"; };
+		89D9C0D82B9CE7B8006C8026 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89DB4AD22B9C91B60071A81F /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		897391C92B9C792A00C399CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				897391D72B9C7B9A00C399CE /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89D944212B974BAA00078C79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +109,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		897391CD2B9C792A00C399CE /* trivago_challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				897391CE2B9C792A00C399CE /* PrimaryButtonTests.swift */,
+				89C575F92B9C875D00440EA7 /* SecondaryButtonTests.swift */,
+			);
+			path = trivago_challengeTests;
+			sourceTree = "<group>";
+		};
 		89D9441B2B974BAA00078C79 = {
 			isa = PBXGroup;
 			children = (
 				89D944262B974BAA00078C79 /* trivago_challenge */,
+				897391CD2B9C792A00C399CE /* trivago_challengeTests */,
 				89D944252B974BAA00078C79 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				89D944242B974BAA00078C79 /* trivago_challenge.app */,
+				897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,20 +139,177 @@
 		89D944262B974BAA00078C79 /* trivago_challenge */ = {
 			isa = PBXGroup;
 			children = (
-				89D944272B974BAA00078C79 /* AppDelegate.swift */,
-				89D944292B974BAA00078C79 /* SceneDelegate.swift */,
-				89D9442B2B974BAA00078C79 /* ViewController.swift */,
-				89D9442D2B974BAA00078C79 /* Main.storyboard */,
-				89D944302B974BAB00078C79 /* Assets.xcassets */,
-				89D944322B974BAB00078C79 /* LaunchScreen.storyboard */,
-				89D944352B974BAB00078C79 /* Info.plist */,
+				89D9443B2B974C3B00078C79 /* Delegates */,
+				89D944402B974E9C00078C79 /* BrandButton */,
+				89D9443D2B974DF500078C79 /* Screens */,
+				89D9443C2B974D9400078C79 /* Resources */,
 			);
 			path = trivago_challenge;
+			sourceTree = "<group>";
+		};
+		89D9443B2B974C3B00078C79 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				89D9C0D82B9CE7B8006C8026 /* AppDelegate.swift */,
+				89D944292B974BAA00078C79 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		89D9443C2B974D9400078C79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89D9444F2B9797ED00078C79 /* ButtonColors */,
+				89D944302B974BAB00078C79 /* Assets.xcassets */,
+				89D944352B974BAB00078C79 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		89D9443D2B974DF500078C79 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				89D9442B2B974BAA00078C79 /* ViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		89D944402B974E9C00078C79 /* BrandButton */ = {
+			isa = PBXGroup;
+			children = (
+				89D944472B974F4600078C79 /* BrandButton.swift */,
+				89DB4AD22B9C91B60071A81F /* ButtonViewModel.swift */,
+				89D9446A2B999F5600078C79 /* StateManager */,
+				89D944702B99BE4B00078C79 /* ButtonStates */,
+				89D9446B2B999F8000078C79 /* ButtonCalculators */,
+				89D9447C2B9A185C00078C79 /* Renderers */,
+			);
+			path = BrandButton;
+			sourceTree = "<group>";
+		};
+		89D9444F2B9797ED00078C79 /* ButtonColors */ = {
+			isa = PBXGroup;
+			children = (
+				89D9444B2B97921700078C79 /* BrandPrimaryButtonColors.swift */,
+				89D9444D2B9797B300078C79 /* BrandSecondaryButtonColors.swift */,
+			);
+			path = ButtonColors;
+			sourceTree = "<group>";
+		};
+		89D9446A2B999F5600078C79 /* StateManager */ = {
+			isa = PBXGroup;
+			children = (
+				89D9443E2B974E8700078C79 /* ButtonStateable.swift */,
+				89D944412B974EC700078C79 /* ButtonAction.swift */,
+				89D944432B974EDF00078C79 /* ButtonReducer.swift */,
+				89D944452B974F1200078C79 /* ButtonStore.swift */,
+			);
+			path = StateManager;
+			sourceTree = "<group>";
+		};
+		89D9446B2B999F8000078C79 /* ButtonCalculators */ = {
+			isa = PBXGroup;
+			children = (
+				89D944522B98493200078C79 /* ButtonStyleCalculable.swift */,
+				89D944712B99DBEE00078C79 /* StyleCalculators */,
+				89D9446D2B99A02100078C79 /* DisableStyleCalculator */,
+				89D9446C2B999FA200078C79 /* BrandButtonIcon */,
+			);
+			path = ButtonCalculators;
+			sourceTree = "<group>";
+		};
+		89D9446C2B999FA200078C79 /* BrandButtonIcon */ = {
+			isa = PBXGroup;
+			children = (
+				89D944722B99E68900078C79 /* BrandButtonIcon.swift */,
+				89D944742B99E71900078C79 /* BrandButtonIconable.swift */,
+				89D9C0DA2B9D743D006C8026 /* Calculators */,
+			);
+			path = BrandButtonIcon;
+			sourceTree = "<group>";
+		};
+		89D9446D2B99A02100078C79 /* DisableStyleCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				89D9445C2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift */,
+				89D9445A2B986AE300078C79 /* ButtonDisableStyleCalculator.swift */,
+			);
+			path = DisableStyleCalculator;
+			sourceTree = "<group>";
+		};
+		89D944702B99BE4B00078C79 /* ButtonStates */ = {
+			isa = PBXGroup;
+			children = (
+				89D944622B98B7AE00078C79 /* PrimaryState.swift */,
+				89D944642B98B7C600078C79 /* SecondaryState.swift */,
+				89D944832B9A199400078C79 /* enums */,
+			);
+			path = ButtonStates;
+			sourceTree = "<group>";
+		};
+		89D944712B99DBEE00078C79 /* StyleCalculators */ = {
+			isa = PBXGroup;
+			children = (
+				89D944542B98495000078C79 /* PrimaryButtonStyleCalculator.swift */,
+				89D9446E2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift */,
+			);
+			path = StyleCalculators;
+			sourceTree = "<group>";
+		};
+		89D9447C2B9A185C00078C79 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				89D944762B9A17C000078C79 /* BrandButtonRenderable.swift */,
+				89D9447A2B9A182100078C79 /* PrimaryButtonRenderer.swift */,
+				89D944782B9A17D600078C79 /* SecondaryButtonRenderer.swift */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		89D944832B9A199400078C79 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				89D9447D2B9A191E00078C79 /* BrandButtonOrder.swift */,
+				89D9447F2B9A193100078C79 /* BrandButtonIconPosition.swift */,
+				89D944812B9A195600078C79 /* BrandButtonType.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
+		89D9C0DA2B9D743D006C8026 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */,
+				89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */,
+				89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */,
+			);
+			path = Calculators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		897391CB2B9C792A00C399CE /* trivago_challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 897391D22B9C792A00C399CE /* Build configuration list for PBXNativeTarget "trivago_challengeTests" */;
+			buildPhases = (
+				897391C82B9C792A00C399CE /* Sources */,
+				897391C92B9C792A00C399CE /* Frameworks */,
+				897391CA2B9C792A00C399CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				897391D12B9C792A00C399CE /* PBXTargetDependency */,
+			);
+			name = trivago_challengeTests;
+			packageProductDependencies = (
+				897391D62B9C7B9A00C399CE /* SnapshotTesting */,
+			);
+			productName = trivago_challengeTests;
+			productReference = 897391CC2B9C792A00C399CE /* trivago_challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		89D944232B974BAA00078C79 /* trivago_challenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D944382B974BAB00078C79 /* Build configuration list for PBXNativeTarget "trivago_challenge" */;
@@ -97,6 +337,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					897391CB2B9C792A00C399CE = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 89D944232B974BAA00078C79;
+					};
 					89D944232B974BAA00078C79 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -111,61 +355,132 @@
 				Base,
 			);
 			mainGroup = 89D9441B2B974BAA00078C79;
+			packageReferences = (
+				897391D52B9C7B9A00C399CE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 89D944252B974BAA00078C79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				89D944232B974BAA00078C79 /* trivago_challenge */,
+				897391CB2B9C792A00C399CE /* trivago_challengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		897391CA2B9C792A00C399CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89D944222B974BAA00078C79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D944342B974BAB00078C79 /* LaunchScreen.storyboard in Resources */,
 				89D944312B974BAB00078C79 /* Assets.xcassets in Resources */,
-				89D9442F2B974BAA00078C79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		897391C82B9C792A00C399CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C575FA2B9C875D00440EA7 /* SecondaryButtonTests.swift in Sources */,
+				897391CF2B9C792A00C399CE /* PrimaryButtonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89D944202B974BAA00078C79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D944732B99E68900078C79 /* BrandButtonIcon.swift in Sources */,
+				89D944772B9A17C000078C79 /* BrandButtonRenderable.swift in Sources */,
+				89D944652B98B7C600078C79 /* SecondaryState.swift in Sources */,
+				89DB4AD32B9C91B60071A81F /* ButtonViewModel.swift in Sources */,
+				89D9C0D92B9CE7B8006C8026 /* AppDelegate.swift in Sources */,
+				89D944792B9A17D600078C79 /* SecondaryButtonRenderer.swift in Sources */,
+				89D944632B98B7AE00078C79 /* PrimaryState.swift in Sources */,
+				89D9447B2B9A182100078C79 /* PrimaryButtonRenderer.swift in Sources */,
+				89D9445F2B98749C00078C79 /* ButtonIconCalculable.swift in Sources */,
+				89D944442B974EDF00078C79 /* ButtonReducer.swift in Sources */,
+				89D9446F2B99A9D800078C79 /* SecondaryButtonStyleCalculator.swift in Sources */,
+				89D944802B9A193100078C79 /* BrandButtonIconPosition.swift in Sources */,
+				89D944822B9A195600078C79 /* BrandButtonType.swift in Sources */,
 				89D9442C2B974BAA00078C79 /* ViewController.swift in Sources */,
-				89D944282B974BAA00078C79 /* AppDelegate.swift in Sources */,
+				89D9443F2B974E8700078C79 /* ButtonStateable.swift in Sources */,
+				89D944752B99E71900078C79 /* BrandButtonIconable.swift in Sources */,
+				89D9445D2B986C5E00078C79 /* ButtonDisableStyleCalculable.swift in Sources */,
+				89D944612B9874E400078C79 /* SecondaryButtonIconCalculater.swift in Sources */,
+				89D944462B974F1200078C79 /* ButtonStore.swift in Sources */,
 				89D9442A2B974BAA00078C79 /* SceneDelegate.swift in Sources */,
+				89D944852B9A53B500078C79 /* PrimaryButtonIconCalculater.swift in Sources */,
+				89D9444E2B9797B300078C79 /* BrandSecondaryButtonColors.swift in Sources */,
+				89D944532B98493300078C79 /* ButtonStyleCalculable.swift in Sources */,
+				89D9445B2B986AE300078C79 /* ButtonDisableStyleCalculator.swift in Sources */,
+				89D9444C2B97921700078C79 /* BrandPrimaryButtonColors.swift in Sources */,
+				89D944552B98495000078C79 /* PrimaryButtonStyleCalculator.swift in Sources */,
+				89D944422B974EC700078C79 /* ButtonAction.swift in Sources */,
+				89D9447E2B9A191E00078C79 /* BrandButtonOrder.swift in Sources */,
+				89D944482B974F4600078C79 /* BrandButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		89D9442D2B974BAA00078C79 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				89D9442E2B974BAA00078C79 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		897391D12B9C792A00C399CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D944232B974BAA00078C79 /* trivago_challenge */;
+			targetProxy = 897391D02B9C792A00C399CE /* PBXContainerItemProxy */;
 		};
-		89D944322B974BAB00078C79 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				89D944332B974BAB00078C79 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		897391D32B9C792A00C399CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DD444593MH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.kabok.trivago-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trivago_challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/trivago_challenge";
+			};
+			name = Debug;
+		};
+		897391D42B9C792A00C399CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DD444593MH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.kabok.trivago-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trivago_challenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/trivago_challenge";
+			};
+			name = Release;
+		};
 		89D944362B974BAB00078C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -216,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +585,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,10 +604,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD444593MH;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = trivago_challenge/Info.plist;
+				INFOPLIST_FILE = trivago_challenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +631,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD444593MH;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = trivago_challenge/Info.plist;
+				INFOPLIST_FILE = trivago_challenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,6 +652,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		897391D22B9C792A00C399CE /* Build configuration list for PBXNativeTarget "trivago_challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				897391D32B9C792A00C399CE /* Debug */,
+				897391D42B9C792A00C399CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		89D9441F2B974BAA00078C79 /* Build configuration list for PBXProject "trivago_challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -358,6 +680,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		897391D52B9C7B9A00C399CE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		897391D62B9C7B9A00C399CE /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 897391D52B9C7B9A00C399CE /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89D9441C2B974BAA00078C79 /* Project object */;
 }
