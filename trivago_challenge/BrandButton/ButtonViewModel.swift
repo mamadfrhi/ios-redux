@@ -133,5 +133,10 @@ class ButtonViewModel {
     func dispatch(_ action: ButtonAction) {
         buttonStore?.dispatch(action: action)
     }
+    
+    func applyInitialState() {
+        buttonStore?.dispatch(action: .setHighlight(isHighlighted: true))
+        buttonStore?.dispatch(action: .setHighlight(isHighlighted: false))
+    }
 }
 
