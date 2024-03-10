@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct BrandButtonIcon: BrandButtonIconProtocol {
+struct BrandButtonIcon: BrandButtonIconable {
     var iconName: String = "square.fill"
     var iconPosition: BrandButtonIconPosition
 }

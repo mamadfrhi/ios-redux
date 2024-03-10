@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol BrandButtonIconProtocol {
+protocol BrandButtonIconable {
     var iconName: String { get }
     var iconPosition: BrandButtonIconPosition { get set }
 }
