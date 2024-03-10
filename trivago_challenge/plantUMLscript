@@ -9,13 +9,13 @@ skinparam backgroundColor #e8f4f8
 set namespaceSeparator none
 
 
-class "BrandButtonRenderable" as BrandButtonRenderable << (P, GoldenRod) protocol >> #f9f0d8 {
+class "BrandButtonRenderable" as BrandButtonRenderable << (P, GoldenRod) protocol >> #f9f0d8 { 
   ~styleCalculator : ButtonStyleCalculable
   ~disableStyleCalculator : ButtonDisableStyleCalculable
   ~iconCalculator : ButtonIconCalculable
-  ~render(buttonState:)
+  ~render(buttonState:) 
 }
-class "ButtonStateable" as ButtonStateable << (P, GoldenRod) protocol >> #f9f0d8 {
+class "ButtonStateable" as ButtonStateable << (P, GoldenRod) protocol >> #f9f0d8 { 
   ~title : String
   ~backgroundColor : UIColor?
   ~borderColor : UIColor?
@@ -27,32 +27,32 @@ class "ButtonStateable" as ButtonStateable << (P, GoldenRod) protocol >> #f9f0d8
   ~isEnabled : Bool
   ~isHighlighted : Bool
   ~buttonOrder : BrandButtonOrder
-  ~buttonType : BrandButtonType
+  ~buttonType : BrandButtonType 
 }
-class "ButtonStyleCalculable" as ButtonStyleCalculable << (P, GoldenRod) protocol >> #f9f0d8 {
+class "ButtonStyleCalculable" as ButtonStyleCalculable << (P, GoldenRod) protocol >> #f9f0d8 { 
   ~calculateBackColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleHighlightColor(buttonType:buttonOrder:isHighlighted:)
-  ~calculateBorderColor(buttonType:buttonOrder:)
+  ~calculateBorderColor(buttonType:buttonOrder:) 
 }
-class "ButtonDisableStyleCalculable" as ButtonDisableStyleCalculable << (P, GoldenRod) protocol >> #f9f0d8 {
+class "ButtonDisableStyleCalculable" as ButtonDisableStyleCalculable << (P, GoldenRod) protocol >> #f9f0d8 { 
   ~calculateDisableBackgroundColor(buttonOrder:)
   ~calculateDisableTitleColor(buttonOrder:)
-  ~calculateDisableBorderColor(buttonOrder:)
+  ~calculateDisableBorderColor(buttonOrder:) 
 }
-class "SecondaryButtonRenderer" as SecondaryButtonRenderer << (S, SkyBlue) struct >> {
+class "SecondaryButtonRenderer" as SecondaryButtonRenderer << (S, SkyBlue) struct >> { 
   ~styleCalculator : ButtonStyleCalculable
   ~disableStyleCalculator : ButtonDisableStyleCalculable
   ~iconCalculator : ButtonIconCalculable
-  ~render(buttonState:)
+  ~render(buttonState:) 
 }
-class "PrimaryButtonRenderer" as PrimaryButtonRenderer << (S, SkyBlue) struct >> {
+class "PrimaryButtonRenderer" as PrimaryButtonRenderer << (S, SkyBlue) struct >> { 
   ~styleCalculator : ButtonStyleCalculable
   ~disableStyleCalculator : ButtonDisableStyleCalculable
   ~iconCalculator : ButtonIconCalculable
-  ~render(buttonState:)
+  ~render(buttonState:) 
 }
-class "SecondaryState" as SecondaryState << (S, SkyBlue) struct >> {
+class "SecondaryState" as SecondaryState << (S, SkyBlue) struct >> { 
   ~title
   ~backgroundColor : UIColor?
   ~borderColor : UIColor?
@@ -65,10 +65,10 @@ class "SecondaryState" as SecondaryState << (S, SkyBlue) struct >> {
   ~isEnabled
   ~isHighlighted
   ~buttonOrder : BrandButtonOrder
-  ~buttonType : BrandButtonType
+  ~buttonType : BrandButtonType 
 }
 
-class "PrimaryState" as PrimaryState << (S, SkyBlue) struct >> {
+class "PrimaryState" as PrimaryState << (S, SkyBlue) struct >> { 
   ~title
   ~backgroundColor : UIColor?
   ~borderColor : UIColor?
@@ -81,24 +81,24 @@ class "PrimaryState" as PrimaryState << (S, SkyBlue) struct >> {
   ~isEnabled
   ~isHighlighted
   ~buttonOrder : BrandButtonOrder
-  ~buttonType : BrandButtonType
+  ~buttonType : BrandButtonType 
 }
-class "ButtonAction" as ButtonAction << (E, LightSteelBlue) enum >> {
+class "ButtonAction" as ButtonAction << (E, LightSteelBlue) enum >> { 
   ~setTitle(_:)
   ~setDisableStyle(isDisabled:)
   ~setHighlight(isHighlighted:)
   ~setButtonOrder(buttonOrder:)
   ~setButtonType(buttonType:)
-  ~setIcon(brandButtonIcon:)
+  ~setIcon(brandButtonIcon:) 
 }
-class "ButtonStore" as ButtonStore << (C, DarkSeaGreen) >> {
+class "ButtonStore" as ButtonStore << (C, DarkSeaGreen) >> { 
   -state : ButtonStateable
   -reducer : ButtonReducer
   ~init(initialState:reducer:)
   ~dispatch(action:)
-  ~configureInitialButtonState()
+  ~configureInitialButtonState() 
 }
-class "ButtonViewModel" as ButtonViewModel << (C, DarkSeaGreen) >> {
+class "ButtonViewModel" as ButtonViewModel << (C, DarkSeaGreen) >> { 
   -buttonStore : ButtonStore?
   -initialState : ButtonStateable
   -primaryRenderer : BrandButtonRenderable
@@ -108,9 +108,9 @@ class "ButtonViewModel" as ButtonViewModel << (C, DarkSeaGreen) >> {
   -createReducer()
   -handleAction(state:action:)
   ~dispatch(_:)
-  ~applyInitialState()
+  ~applyInitialState() 
 }
-class "BrandButton" as BrandButton << (C, DarkSeaGreen) >> {
+class "BrandButton" as BrandButton << (C, DarkSeaGreen) >> { 
   ~init()
   ~init(coder:)
   ~updateAppearance(state:)
@@ -118,27 +118,27 @@ class "BrandButton" as BrandButton << (C, DarkSeaGreen) >> {
   -setBorderColor(for:)
   -set(insetValue:)
   -set(font:)
-  -set(iconPosition:iconImage:)
+  -set(iconPosition:iconImage:) 
 }
-class "PrimaryButtonStyleCalculator" as PrimaryButtonStyleCalculator << (S, SkyBlue) struct >> {
+class "PrimaryButtonStyleCalculator" as PrimaryButtonStyleCalculator << (S, SkyBlue) struct >> { 
   ~calculateBackColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleHighlightColor(buttonType:buttonOrder:isHighlighted:)
-  ~calculateBorderColor(buttonType:buttonOrder:)
+  ~calculateBorderColor(buttonType:buttonOrder:) 
 }
-class "SecondaryButtonStyleCalculator" as SecondaryButtonStyleCalculator << (S, SkyBlue) struct >> {
+class "SecondaryButtonStyleCalculator" as SecondaryButtonStyleCalculator << (S, SkyBlue) struct >> { 
   ~calculateBackColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleHighlightColor(buttonType:buttonOrder:isHighlighted:)
-  ~calculateBorderColor(buttonType:buttonOrder:)
+  ~calculateBorderColor(buttonType:buttonOrder:) 
 }
-class "ButtonDisableStyleCalculator" as ButtonDisableStyleCalculator << (S, SkyBlue) struct >> {
+class "ButtonDisableStyleCalculator" as ButtonDisableStyleCalculator << (S, SkyBlue) struct >> { 
   ~calculateDisableTitleColor(buttonOrder:)
   ~calculateDisableBackgroundColor(buttonOrder:)
-  ~calculateDisableBorderColor(buttonOrder:)
+  ~calculateDisableBorderColor(buttonOrder:) 
 }
 
-class "ViewController" as ViewController << (C, DarkSeaGreen) >> {
+class "ViewController" as ViewController << (C, DarkSeaGreen) >> { 
   -brandButton : BrandButton!
   -viewModel : ButtonViewModel
   -statusLabel : UILabel!
@@ -147,7 +147,7 @@ class "ViewController" as ViewController << (C, DarkSeaGreen) >> {
   -actionSequence : [ButtonAction]
   ~init(viewModel:)
   ~init(coder:)
-  ~viewDidLoad()
+  ~viewDidLoad() 
 }
 
 ButtonViewModel <.. ViewController : reference
