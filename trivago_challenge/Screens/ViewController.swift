@@ -118,6 +118,7 @@ extension ViewController {
     
     @objc private func brandButtonTouchDragOutside() {
         viewModel.dispatch(.setHighlight(isHighlighted: false))
+        statusLabel.text = "I got you, just a sec!"
         startShowcase()
     }
 }
