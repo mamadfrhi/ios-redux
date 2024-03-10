@@ -21,6 +21,5 @@ struct BrandButtonRepresentable: UIViewRepresentable {
         viewModel.stateDidChange = { state in
             uiView.updateAppearance(state: state)
         }
-        uiView.updateAppearance(state: viewModel.buttonStore!.state)
     }
 }

@@ -245,7 +245,7 @@
 			children = (
 				89D944722B99E68900078C79 /* BrandButtonIcon.swift */,
 				89D944742B99E71900078C79 /* BrandButtonIconable.swift */,
-				89D9C0DA2B9D743D006C8026 /* Calculators */,
+				89D9C0DA2B9D743D006C8026 /* IconCalculators */,
 			);
 			path = BrandButtonIcon;
 			sourceTree = "<group>";
@@ -298,14 +298,14 @@
 			path = enums;
 			sourceTree = "<group>";
 		};
-		89D9C0DA2B9D743D006C8026 /* Calculators */ = {
+		89D9C0DA2B9D743D006C8026 /* IconCalculators */ = {
 			isa = PBXGroup;
 			children = (
 				89D9445E2B98749C00078C79 /* ButtonIconCalculable.swift */,
 				89D944602B9874E400078C79 /* SecondaryButtonIconCalculater.swift */,
 				89D944842B9A53B500078C79 /* PrimaryButtonIconCalculater.swift */,
 			);
-			path = Calculators;
+			path = IconCalculators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
