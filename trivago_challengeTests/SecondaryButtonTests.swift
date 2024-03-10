@@ -16,11 +16,15 @@ final class SecondaryButtonTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let primaryButtonRenderer = PrimaryButtonRenderer()
-        let secondaryButtonRenderer = SecondaryButtonRenderer()
+        let primaryButtonRenderer = PrimaryButtonRenderer(styleCalculator: PrimaryButtonStyleCalculator(),
+                                                          disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                          iconCalculator: PrimaryButtonIconCalculater())
+        let secondaryButtonRenderer = SecondaryButtonRenderer(styleCalculator: SecondaryButtonStyleCalculator(),
+                                                              disableStyleCalculator: ButtonDisableStyleCalculator(),
+                                                              iconCalculator: SecondaryButtonIconCalculater())
         self.vm = ButtonViewModel(initialState: SecondaryState(),
-                                 primaryRenderer: primaryButtonRenderer,
-                                 secondaryRenderer: secondaryButtonRenderer)
+                                  primaryRenderer: primaryButtonRenderer,
+                                  secondaryRenderer: secondaryButtonRenderer)
         self.vc = ViewController(viewModel: vm!)
         self.vc.viewDidLayoutSubviews()
         self.vm.dispatch(.setHighlight(isHighlighted: false))
