@@ -3,6 +3,8 @@
 hide empty members
 skinparam shadowing false
 
+skinparam backgroundColor #e8f4f8
+
 ' STYLE END
 set namespaceSeparator none
 
@@ -38,19 +40,19 @@ class "ButtonDisableStyleCalculable" as ButtonDisableStyleCalculable << (P, Gold
   ~calculateDisableTitleColor(buttonOrder:)
   ~calculateDisableBorderColor(buttonOrder:) 
 }
-class "SecondaryButtonRenderer" as SecondaryButtonRenderer << (S, SkyBlue) struct >> #dbdbff { 
+class "SecondaryButtonRenderer" as SecondaryButtonRenderer << (S, SkyBlue) struct >> { 
   ~styleCalculator : ButtonStyleCalculable
   ~disableStyleCalculator : ButtonDisableStyleCalculable
   ~iconCalculator : ButtonIconCalculable
   ~render(buttonState:) 
 }
-class "PrimaryButtonRenderer" as PrimaryButtonRenderer << (S, SkyBlue) struct >> #cacafc { 
+class "PrimaryButtonRenderer" as PrimaryButtonRenderer << (S, SkyBlue) struct >> { 
   ~styleCalculator : ButtonStyleCalculable
   ~disableStyleCalculator : ButtonDisableStyleCalculable
   ~iconCalculator : ButtonIconCalculable
   ~render(buttonState:) 
 }
-class "SecondaryState" as SecondaryState << (S, SkyBlue) struct >> #dbdbff { 
+class "SecondaryState" as SecondaryState << (S, SkyBlue) struct >> { 
   ~title
   ~backgroundColor : UIColor?
   ~borderColor : UIColor?
@@ -66,7 +68,7 @@ class "SecondaryState" as SecondaryState << (S, SkyBlue) struct >> #dbdbff {
   ~buttonType : BrandButtonType 
 }
 
-class "PrimaryState" as PrimaryState << (S, SkyBlue) struct >> #cacafc { 
+class "PrimaryState" as PrimaryState << (S, SkyBlue) struct >> { 
   ~title
   ~backgroundColor : UIColor?
   ~borderColor : UIColor?
@@ -118,13 +120,13 @@ class "BrandButton" as BrandButton << (C, DarkSeaGreen) >> {
   -set(font:)
   -set(iconPosition:iconImage:) 
 }
-class "PrimaryButtonStyleCalculator" as PrimaryButtonStyleCalculator << (S, SkyBlue) struct >> #cacafc { 
+class "PrimaryButtonStyleCalculator" as PrimaryButtonStyleCalculator << (S, SkyBlue) struct >> { 
   ~calculateBackColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleHighlightColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateBorderColor(buttonType:buttonOrder:) 
 }
-class "SecondaryButtonStyleCalculator" as SecondaryButtonStyleCalculator << (S, SkyBlue) struct >> #dbdbff { 
+class "SecondaryButtonStyleCalculator" as SecondaryButtonStyleCalculator << (S, SkyBlue) struct >> { 
   ~calculateBackColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleColor(buttonType:buttonOrder:isHighlighted:)
   ~calculateTitleHighlightColor(buttonType:buttonOrder:isHighlighted:)
@@ -148,6 +150,21 @@ class "ViewController" as ViewController << (C, DarkSeaGreen) >> {
   ~viewDidLoad() 
 }
 
+class "ButtonAction" as ButtonAction << (E, LightSteelBlue) enum >> { 
+  ~setTitle(_:)
+  ~setDisableStyle(isDisabled:)
+  ~setHighlight(isHighlighted:)
+  ~setButtonOrder(buttonOrder:)
+  ~setButtonType(buttonType:)
+  ~setIcon(brandButtonIcon:) 
+}
+
+class "ButtonAction" as ButtonAction0 << (X, Orchid) extension >> { 
+  ~displayName : String 
+}
+
+
+
 ButtonViewModel <.. ViewController : reference
 SecondaryButtonRenderer <.. ButtonViewModel : reference
 PrimaryButtonRenderer <.. ButtonViewModel : reference
@@ -156,17 +173,17 @@ PrimaryButtonStyleCalculator <.. PrimaryButtonRenderer : reference
 SecondaryButtonStyleCalculator <.. SecondaryButtonRenderer : reference
 
 ButtonStore <.. ButtonViewModel : reference
-ButtonStateable <.. ButtonStore : uses
+ButtonStateable <.. ButtonStore : reference
 
 ButtonDisableStyleCalculator <.. SecondaryButtonRenderer : reference
 ButtonDisableStyleCalculator <.. PrimaryButtonRenderer : reference
 
 
-ButtonAction <.. ButtonStore : uses
+ButtonAction <.. ButtonStore : refrence
 
 BrandButton <.. ViewController : reference
 
-BrandButton <.. ButtonViewModel : update
+ButtonStateable <.. BrandButton : conform
 
 BrandButtonRenderable <|.. SecondaryButtonRenderer : conforms to
 BrandButtonRenderable <|.. PrimaryButtonRenderer : conforms to
@@ -176,5 +193,6 @@ UIButton <|-- BrandButton : inherits
 ButtonStyleCalculable <|.. PrimaryButtonStyleCalculator : conforms to
 ButtonStyleCalculable <|.. SecondaryButtonStyleCalculator : conforms to
 ButtonDisableStyleCalculable <|.. ButtonDisableStyleCalculator : conforms to
+
 
 @enduml

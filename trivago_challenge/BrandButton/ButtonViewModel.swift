@@ -12,6 +12,8 @@ class ButtonViewModel: ObservableObject {
     
     @Published private(set) var buttonStore: ButtonStore?
     private let initialState: ButtonStateable
+    
+    // TODO: make both into a single property.
     private let primaryRenderer: BrandButtonRenderable
     private let secondaryRenderer: BrandButtonRenderable
     
