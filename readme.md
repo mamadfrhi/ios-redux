@@ -5,7 +5,7 @@
 The BrandButton app is a showcase project demonstrating a highly dynamic UI button component with an implementation of the Redux pattern for state management. This application is designed following SOLID principles, particularly focusing on the Open/Closed principle (O) and the Dependency Inversion Principle (D) to ensure extendability and maintainability.
 
 ## Architecture
-![Architecture](uml.png)
+![Architecture](trivago_challenge/uml.png)
 The application utilizes a Redux-like state management system to handle the button state dynamically. It abstracts concrete implementations into protocols, allowing flexibility and making the codebase ready for future extensions with minimal changes.
 
 ## SOLID Foundations: Prioritizing Architecture for Adaptive UI"
@@ -18,6 +18,11 @@ I've prioritized developing an extendable architecture based on SOLID principles
 - Actions dispatched based on user interaction, reflecting immediate UI changes.
 - Extensible action enumeration `ButtonAction` facilitating new features addition.
 - Decoupled View Controller logic via a `ButtonViewModel`.
+
+#### Bonus Features:
+- SwiftUI Compatibility: Designed to work effortlessly both with UIKit and SwiftUI
+- Animation Transitions: Implemented smooth transition animations for state changes
+- Easy Customization: The architecture of the app is thoughtfully designed with flexibility and customization in mind. Adjustments only require minimal updates to the reducer and the addition of new cases in the `ButtonAction` enum. While not every customization option has been fully implemented due to time constraints, the foundational work has been laid out to ensure that extending the button's capabilities is straightforward.
 
 ## Usage
 
@@ -53,7 +58,7 @@ Adding new functionalities can be done by appending new cases to the ButtonActio
 ## Gestures and SwiftUI Compatibility
 The BrandButton component is fully compatible with SwiftUI, enabling dynamic UI interactions through gestures. The integration with SwiftUI is facilitated through the `BrandButtonRepresentable` struct, which bridges the UIKit-based BrandButton with SwiftUI's declarative interface. This setup allows the button to react to state changes and user interactions in a SwiftUI environment.
 
-To view the `BrandButton` component within a SwiftUI context, simply modify the `useSwiftUI` flag in the `SceneDelegate` to `true`. This flag controls whether the UIKit-based view controller or the SwiftUI view is presented as the root view controller.
+To view the `BrandButton` component within a SwiftUI context, simply modify the `useSwiftUI` flag in the `SceneDelegate` to `true`.
 
 ```
 let useSwiftUI = true
