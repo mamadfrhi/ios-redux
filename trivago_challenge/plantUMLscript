@@ -167,8 +167,6 @@ ButtonAction <.. ButtonStore : uses
 
 BrandButton <.. ViewController : reference
 
-BrandButton <.. ButtonViewModel : update
-
 
 ViewController <.. ButtonViewModel : update
 
