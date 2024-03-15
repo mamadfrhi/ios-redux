@@ -4,6 +4,11 @@
 
 The BrandButton app is a showcase project demonstrating a highly dynamic UI button component with an implementation of the Redux pattern for state management. This application is designed following SOLID principles, particularly focusing on the Open/Closed principle (O) and the Dependency Inversion Principle (D) to ensure extendability and maintainability.
 
+
+
+https://github.com/mamadfrhi/ios-redux/assets/28094207/5c3a6357-f340-4c57-822f-6a6d9c541a59
+
+
 ## Architecture
 ![Architecture](trivago_challenge/uml.png)
 The application utilizes a Redux-like state management system to handle the button state dynamically. It abstracts concrete implementations into protocols, allowing flexibility and making the codebase ready for future extensions with minimal changes.
@@ -68,10 +73,14 @@ let useSwiftUI = true
 ### Available Gestures in SwiftUI Implementation
 Within the `BrandButtonView`, several gestures are configured to demonstrate the interactive and dynamic capabilities of the BrandButton:
 
-**Tap Gesture:** A simple tap on the button toggles the highlight state, showcasing the button's response to basic user interaction.
+**Tap Gesture:**
+A simple tap on the button toggles the highlight state, showcasing the button's response to basic user interaction.
 
-**Drag Gesture (Minimum Distance: 0):** Initiates the button's highlight state to indicate a press-and-hold action.
+**Drag Gesture (Minimum Distance: 0):** 
+Initiates the button's highlight state to indicate a press-and-hold action.
 
-**Drag Gesture (Minimum Distance: 5):** Changes the button's type (actionButton or successButton) based on the drag action's completion. This demonstrates the dynamic update of the button's appearance based on user interaction.
+**Drag Gesture (Minimum Distance: 5):**
+Changes the button's type (actionButton or successButton) based on the drag action's completion. This demonstrates the dynamic update of the button's appearance based on user interaction.
 
-**Drag Gesture (Minimum Distance: 400):** Toggles the button's icon position between leading and trailing, or introduces an icon if none is set. This gesture showcases the ability to dynamically modify the button's icon configuration based on user actions.
+**Drag Gesture (Minimum Distance: 400):**
+Toggles the button's icon position between leading and trailing, or introduces an icon if none is set. This gesture showcases the ability to dynamically modify the button's icon configuration based on user actions.
